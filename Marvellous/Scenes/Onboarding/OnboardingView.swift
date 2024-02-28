@@ -15,6 +15,7 @@ struct OnboardingView: View {
             FirstWelcomeView()
             SecondWelcomeView()
             ThirdWelcomeView()
+            FourthWelcomeView()
 
         }
         .ignoresSafeArea()
