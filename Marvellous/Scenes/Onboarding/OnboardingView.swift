@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    // MARK: - Body
     var body: some View {
         TabView {
             FirstWelcomeView()
-            Text("2")
+            SecondWelcomeView()
 
         }
         .ignoresSafeArea()
@@ -20,6 +22,7 @@ struct OnboardingView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     OnboardingView()
 }

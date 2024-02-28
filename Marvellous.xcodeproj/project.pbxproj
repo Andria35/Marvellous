@@ -15,6 +15,8 @@
 		1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FACF2B8F82DF002E9098 /* OnboardingView.swift */; };
 		1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD12B8F8582002E9098 /* FirstWelcomeView.swift */; };
 		1071FAD52B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD42B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift */; };
+		1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */; };
+		1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1071FACF2B8F82DF002E9098 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1071FAD12B8F8582002E9098 /* FirstWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWelcomeView.swift; sourceTree = "<group>"; };
 		1071FAD42B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContinueButtonComponentView.swift; sourceTree = "<group>"; };
+		1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWelcomeView.swift; sourceTree = "<group>"; };
+		1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			children = (
 				1071FACF2B8F82DF002E9098 /* OnboardingView.swift */,
 				1071FAD12B8F8582002E9098 /* FirstWelcomeView.swift */,
+				1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				1071FAD42B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift */,
+				1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -203,6 +209,8 @@
 				1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift in Sources */,
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
+				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
+				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,
 			);
