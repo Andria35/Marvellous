@@ -27,7 +27,6 @@ struct AuthenticationView: View {
 
 // MARK: - UI Components
 extension AuthenticationView {
-    
     // MARK: - AuthenticationButtonsVStack
     private var authenticationButtonsVStack: some View {
         VStack {

@@ -11,7 +11,7 @@ struct FourthWelcomeView: View {
     
     // MARK: - Properties
     var buttonTapped: () -> Void
-
+    
     
     // MARK: - Body
     var body: some View {
@@ -22,7 +22,6 @@ struct FourthWelcomeView: View {
                     OnboardingImageComponentView(imageName: "FourthWelcomeViewImage")
                     textVStack
                 }
-                
                 ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
                     .padding()
                     .padding(.bottom)

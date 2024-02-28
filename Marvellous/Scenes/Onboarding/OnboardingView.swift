@@ -40,11 +40,10 @@ struct OnboardingView: View {
             .tag(TabViewTabs.fourthWelcomeView)
             AuthenticationView()
                 .tag(TabViewTabs.authenticationView)
-            
         }
         .ignoresSafeArea()
         .tabViewStyle(.page)
-
+        
     }
 }
 

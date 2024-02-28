@@ -14,6 +14,7 @@ struct ButtonComponentView: View {
     var action: () -> Void
     let backgroundColor: Color?
     
+    // MARK: - Body
     var body: some View {
         Button(action: {
             withAnimation {
@@ -25,13 +26,14 @@ struct ButtonComponentView: View {
                 .font(.title)
                 .foregroundStyle(.white)
                 .padding()
-                .background(backgroundColor == nil ? .clear : backgroundColor )
+                .background(backgroundColor == nil ? .black : backgroundColor )
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .border(backgroundColor == nil ? .red : .clear, width: 4)
         })
     }
 }
 
+// MARK: - Preview
 #Preview {
     ZStack {
         Color.black
