@@ -9,6 +9,10 @@ import SwiftUI
 
 struct SecondWelcomeView: View {
     
+    // MARK: - Properties
+    var buttonTapped: () -> Void
+
+    
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -18,7 +22,9 @@ struct SecondWelcomeView: View {
                     OnboardingImageComponentView(imageName: "SecondWelcomeView")
                     textVStack
                 }
-                OnboardingContinueButtonComponentView()
+                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
+                    .padding()
+                    .padding(.bottom)
                 Spacer()
             }
         }
@@ -44,5 +50,5 @@ extension SecondWelcomeView {
 
 // MARK: - Preview
 #Preview {
-    SecondWelcomeView()
+    SecondWelcomeView(buttonTapped: {})
 }

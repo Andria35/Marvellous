@@ -9,6 +9,10 @@ import SwiftUI
 
 struct FourthWelcomeView: View {
     
+    // MARK: - Properties
+    var buttonTapped: () -> Void
+
+    
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -19,7 +23,9 @@ struct FourthWelcomeView: View {
                     textVStack
                 }
                 
-                OnboardingContinueButtonComponentView()
+                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
+                    .padding()
+                    .padding(.bottom)
                 Spacer()
             }
         }
@@ -44,5 +50,5 @@ extension FourthWelcomeView {
 
 // MARK: - Preview
 #Preview {
-    FourthWelcomeView()
+    FourthWelcomeView(buttonTapped: {})
 }

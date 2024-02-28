@@ -9,14 +9,35 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    // MARK: - Properties
+    enum TabViewTabs {
+        case firstWelcomeView
+        case secondWelcomeView
+        case thirdWelcomeView
+        case fourthWelcomeView
+    }
+    @State var selectedTab: TabViewTabs = .firstWelcomeView
+    
     // MARK: - Body
     var body: some View {
-        TabView {
-            FirstWelcomeView()
-            SecondWelcomeView()
-            ThirdWelcomeView()
-            FourthWelcomeView()
-
+        TabView(selection: $selectedTab) {
+            FirstWelcomeView() {
+                selectedTab = .secondWelcomeView
+            }
+            .tag(TabViewTabs.firstWelcomeView)
+            SecondWelcomeView() {
+                selectedTab = .thirdWelcomeView
+            }
+            .tag(TabViewTabs.secondWelcomeView)
+            ThirdWelcomeView() {
+                selectedTab = .fourthWelcomeView
+            }
+            .tag(TabViewTabs.thirdWelcomeView)
+            FourthWelcomeView() {
+                
+            }
+            .tag(TabViewTabs.fourthWelcomeView)
+            
         }
         .ignoresSafeArea()
         .tabViewStyle(.page)
