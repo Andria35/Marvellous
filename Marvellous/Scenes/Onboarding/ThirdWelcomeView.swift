@@ -19,7 +19,7 @@ struct ThirdWelcomeView: View {
             Color.black
             VStack {
                 ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "ThirdWelcomeView")
+                    OnboardingImageComponentView(imageName: "ThirdWelcomeViewImage")
                     textVStack
                 }
                 

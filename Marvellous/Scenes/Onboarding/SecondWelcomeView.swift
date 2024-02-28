@@ -19,7 +19,7 @@ struct SecondWelcomeView: View {
             Color.black
             VStack {
                 ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "SecondWelcomeView")
+                    OnboardingImageComponentView(imageName: "SecondWelcomeViewImage")
                     textVStack
                 }
                 ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)

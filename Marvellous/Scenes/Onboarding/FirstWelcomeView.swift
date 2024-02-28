@@ -18,7 +18,7 @@ struct FirstWelcomeView: View {
             Color.black
             VStack {
                 ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "FirstWelcomeView")
+                    OnboardingImageComponentView(imageName: "FirstWelcomeViewImage")
                     textVStack
                 }
                 ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)

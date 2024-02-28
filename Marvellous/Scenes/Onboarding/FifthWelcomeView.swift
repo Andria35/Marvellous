@@ -12,17 +12,15 @@ struct FifthWelcomeView: View {
     // MARK: - Properties
     var buttonTapped: () -> Void
 
-    
     // MARK: - Body
     var body: some View {
         ZStack {
             Color.black
             VStack {
                 ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "FifthWelcomeView")
+                    OnboardingImageComponentView(imageName: "FifthWelcomeViewImage")
                     getStartedText
                 }
-                
                 ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
                     .padding()
                     .padding(.bottom)

@@ -20,6 +20,7 @@
 		1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */; };
 		1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */; };
 		1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */; };
+		1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeView.swift; sourceTree = "<group>"; };
 		1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthWelcomeView.swift; sourceTree = "<group>"; };
 		1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthWelcomeView.swift; sourceTree = "<group>"; };
+		1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */,
 				1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */,
 				1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */,
+				1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
 				1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */,
 				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
+				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,

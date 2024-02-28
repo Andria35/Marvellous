@@ -29,7 +29,6 @@ struct ButtonComponentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .border(backgroundColor == nil ? .red : .clear, width: 4)
         })
-
     }
 }
 

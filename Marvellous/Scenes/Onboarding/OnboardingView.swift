@@ -15,6 +15,7 @@ struct OnboardingView: View {
         case secondWelcomeView
         case thirdWelcomeView
         case fourthWelcomeView
+        case authenticationView
     }
     @State var selectedTab: TabViewTabs = .firstWelcomeView
     
@@ -34,9 +35,11 @@ struct OnboardingView: View {
             }
             .tag(TabViewTabs.thirdWelcomeView)
             FourthWelcomeView() {
-                
+                selectedTab = .authenticationView
             }
             .tag(TabViewTabs.fourthWelcomeView)
+            AuthenticationView()
+                .tag(TabViewTabs.authenticationView)
             
         }
         .ignoresSafeArea()
