@@ -14,6 +14,7 @@ struct OnboardingView: View {
         TabView {
             FirstWelcomeView()
             SecondWelcomeView()
+            ThirdWelcomeView()
 
         }
         .ignoresSafeArea()

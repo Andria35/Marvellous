@@ -17,6 +17,7 @@
 		1071FAD52B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD42B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift */; };
 		1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */; };
 		1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */; };
+		1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1071FAD42B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContinueButtonComponentView.swift; sourceTree = "<group>"; };
 		1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWelcomeView.swift; sourceTree = "<group>"; };
 		1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingImageComponentView.swift; sourceTree = "<group>"; };
+		1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				1071FACF2B8F82DF002E9098 /* OnboardingView.swift */,
 				1071FAD12B8F8582002E9098 /* FirstWelcomeView.swift */,
 				1071FAD62B8F92BF002E9098 /* SecondWelcomeView.swift */,
+				1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* OnboardingContinueButtonComponentView.swift in Sources */,
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
+				1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */,
 				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
 				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
