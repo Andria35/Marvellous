@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
+    @EnvironmentObject var router: Router
+    
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -28,7 +30,9 @@ extension AuthenticationView {
     // MARK: - AuthenticationButtonsVStack
     private var authenticationButtonsVStack: some View {
         VStack {
-            ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
+            ButtonComponentView(title: "SignUp", action: {
+                router.navigate(to: .signUp)
+            }, backgroundColor: .red)
             ButtonComponentView(title: "LogIn", action: {}, backgroundColor: nil)
         }
         .padding()

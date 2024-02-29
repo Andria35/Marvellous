@@ -13,7 +13,7 @@ final class Router: ObservableObject {
     
     // MARK: - Destination
     public enum Destination: Codable, Hashable {
-        case test
+        case signUp
     }
     
     // MARK: - Methods

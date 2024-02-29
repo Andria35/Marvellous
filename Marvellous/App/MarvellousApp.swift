@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct MarvellousApp: App {
+    
+    @StateObject var router = Router()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack(path: $router.navigationPath) {
+                ContentView()
+                    .navigationDestination(for: Router.Destination.self) { destination in
+                        switch destination {
+                        case .signUp:
+                            SignUpView()
+                        }
+                    }
+            }
+            .environmentObject(router)
         }
     }
 }

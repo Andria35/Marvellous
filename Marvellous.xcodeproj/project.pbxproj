@@ -23,6 +23,7 @@
 		1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */; };
 		1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */; };
 		1071FAE62B907B40002E9098 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE52B907B40002E9098 /* Router.swift */; };
+		1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE82B907BB8002E9098 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundComponentView.swift; sourceTree = "<group>"; };
 		1071FAE52B907B40002E9098 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1071FAE82B907BB8002E9098 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				1071FACD2B8F7F79002E9098 /* ContentView */,
 				1071FACE2B8F817C002E9098 /* Onboarding */,
+				1071FAE72B907B93002E9098 /* SignUp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -159,6 +162,14 @@
 				1071FAE52B907B40002E9098 /* Router.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1071FAE72B907B93002E9098 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				1071FAE82B907BB8002E9098 /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
 				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
+				1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,
 				1071FAE62B907B40002E9098 /* Router.swift in Sources */,
