@@ -16,7 +16,7 @@ struct FourthWelcomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black
+            MainBackgroundComponentView()
             VStack {
                 ZStack(alignment: .bottom) {
                     OnboardingImageComponentView(imageName: "FourthWelcomeViewImage")

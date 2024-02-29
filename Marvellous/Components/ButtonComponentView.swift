@@ -27,8 +27,9 @@ struct ButtonComponentView: View {
                 .foregroundStyle(.white)
                 .padding()
                 .background(backgroundColor == nil ? .black : backgroundColor )
-                .clipShape(RoundedRectangle(cornerRadius: 5))
                 .border(backgroundColor == nil ? .red : .clear, width: 4)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+
         })
     }
 }

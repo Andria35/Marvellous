@@ -12,12 +12,10 @@ struct AuthenticationView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black
+            MainBackgroundComponentView()
             VStack {
-                ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "AuthenticationViewImage")
-                    authenticationButtonsVStack
-                }
+                OnboardingImageComponentView(imageName: "AuthenticationViewImage")
+                authenticationButtonsVStack
                 Spacer()
             }
         }
