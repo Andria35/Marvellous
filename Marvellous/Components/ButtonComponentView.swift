@@ -17,9 +17,7 @@ struct ButtonComponentView: View {
     // MARK: - Body
     var body: some View {
         Button(action: {
-            withAnimation {
-                action()
-            }
+            action()
         }, label: {
             Text(title)
                 .frame(maxWidth: .infinity)

@@ -28,7 +28,6 @@ struct ThirdWelcomeView: View {
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 

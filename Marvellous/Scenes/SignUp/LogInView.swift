@@ -1,5 +1,5 @@
 //
-//  SignUpView.swift
+//  LogInView.swift
 //  Marvellous
 //
 //  Created by Andria Inasaridze on 29.02.24.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct SignUpView: View {
+struct LogInView: View {
     var body: some View {
-        Text("Sign Up")
-            .ignoresSafeArea()
+        Text("LogIn")
     }
 }
 
 #Preview {
-    SignUpView()
+    LogInView()
 }

@@ -24,6 +24,7 @@
 		1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */; };
 		1071FAE62B907B40002E9098 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE52B907B40002E9098 /* Router.swift */; };
 		1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE82B907BB8002E9098 /* SignUpView.swift */; };
+		1071FAEB2B90AD57002E9098 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAEA2B90AD57002E9098 /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundComponentView.swift; sourceTree = "<group>"; };
 		1071FAE52B907B40002E9098 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1071FAE82B907BB8002E9098 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1071FAEA2B90AD57002E9098 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1071FAE82B907BB8002E9098 /* SignUpView.swift */,
+				1071FAEA2B90AD57002E9098 /* LogInView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1071FAEB2B90AD57002E9098 /* LogInView.swift in Sources */,
 				1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */,
 				1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* ButtonComponentView.swift in Sources */,

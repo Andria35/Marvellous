@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
-    @EnvironmentObject var router: Router
+    @Binding var onboardingIsPresented: Bool
+    @Binding var showLogIn: Bool
     
     // MARK: - Body
     var body: some View {
@@ -21,7 +22,6 @@ struct AuthenticationView: View {
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
@@ -31,9 +31,13 @@ extension AuthenticationView {
     private var authenticationButtonsVStack: some View {
         VStack {
             ButtonComponentView(title: "SignUp", action: {
-                router.navigate(to: .signUp)
+                showLogIn = false
+                onboardingIsPresented = false
             }, backgroundColor: .red)
-            ButtonComponentView(title: "LogIn", action: {}, backgroundColor: nil)
+            ButtonComponentView(title: "LogIn", action: {
+                showLogIn = true
+                onboardingIsPresented = false
+            }, backgroundColor: nil)
         }
         .padding()
         .padding(.bottom)
@@ -42,5 +46,5 @@ extension AuthenticationView {
 
 // MARK: - Preview
 #Preview {
-    AuthenticationView()
+    AuthenticationView(onboardingIsPresented: .constant(true), showLogIn: .constant(true))
 }

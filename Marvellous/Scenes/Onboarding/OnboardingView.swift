@@ -9,36 +9,58 @@ import SwiftUI
 
 struct OnboardingView: View {
     
+    @Binding var onboardingIsPresented: Bool
+    @Binding var showLogIn: Bool
+    
     // MARK: - Properties
     enum TabViewTabs {
         case firstWelcomeView
         case secondWelcomeView
         case thirdWelcomeView
         case fourthWelcomeView
+        case fifthWelcomeView
         case authenticationView
     }
     @State var selectedTab: TabViewTabs = .firstWelcomeView
+    
     
     // MARK: - Body
     var body: some View {
         TabView(selection: $selectedTab) {
             FirstWelcomeView() {
-                selectedTab = .secondWelcomeView
+                withAnimation {
+                    selectedTab = .secondWelcomeView
+                }
             }
             .tag(TabViewTabs.firstWelcomeView)
+            
             SecondWelcomeView() {
-                selectedTab = .thirdWelcomeView
+                withAnimation {
+                    selectedTab = .thirdWelcomeView
+                }
             }
             .tag(TabViewTabs.secondWelcomeView)
+            
             ThirdWelcomeView() {
-                selectedTab = .fourthWelcomeView
+                withAnimation {
+                    selectedTab = .fourthWelcomeView
+                }
             }
             .tag(TabViewTabs.thirdWelcomeView)
+            
             FourthWelcomeView() {
-                selectedTab = .authenticationView
+                withAnimation {
+                    selectedTab = .fifthWelcomeView
+                }
             }
             .tag(TabViewTabs.fourthWelcomeView)
-            AuthenticationView()
+            FifthWelcomeView() {
+                withAnimation {
+                    selectedTab = .authenticationView
+                }
+            }
+            .tag(TabViewTabs.fifthWelcomeView)
+            AuthenticationView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)
                 .tag(TabViewTabs.authenticationView)
         }
         .ignoresSafeArea()
@@ -49,5 +71,5 @@ struct OnboardingView: View {
 
 // MARK: - Preview
 #Preview {
-    OnboardingView()
+    OnboardingView(onboardingIsPresented: .constant(true), showLogIn: .constant(true))
 }

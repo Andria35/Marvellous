@@ -27,7 +27,6 @@ struct FirstWelcomeView: View {
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 

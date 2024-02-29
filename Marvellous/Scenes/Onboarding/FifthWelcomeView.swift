@@ -28,7 +28,6 @@ struct FifthWelcomeView: View {
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
