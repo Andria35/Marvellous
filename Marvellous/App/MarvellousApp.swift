@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct MarvellousApp: App {
     
+    // MARK: - Properties
     @StateObject var router = Router()
     
+    // MARK: - Initialization
+    init() {
+        FirebaseApp.configure()
+    }
+    
+    // MARK: - Body
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
