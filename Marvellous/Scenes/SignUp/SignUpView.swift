@@ -12,6 +12,8 @@ struct SignUpView: View {
     @StateObject var viewModel: SignUpViewModel
     @EnvironmentObject var router: Router
     
+    
+    
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -58,17 +60,17 @@ extension SignUpView {
     // MARK: - AuthenticationTextFields
     private var authenticationTextFieldVStack: some View {
         VStack {
-            TextField("Email", text: $viewModel.email)
+            TextField("Email", text: $viewModel.emailTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             
-            SecureField("Password", text: $viewModel.password)
+            SecureField("Password", text: $viewModel.passwordTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             
-            SecureField("Repeat Password", text: $viewModel.password)
+            SecureField("Repeat Password", text: $viewModel.passwordTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -79,14 +81,38 @@ extension SignUpView {
     // MARK: - ValidatorVStack
     private var validatorVStack: some View {
         VStack(alignment: .leading) {
-            Text("❌ At least 8 characters")
-                .foregroundStyle(.red)
-            Text("❌ Contains one uppercase letter")
-                .foregroundStyle(.red)
-            Text("❌ Contains one number")
-                .foregroundStyle(.red)
-            Text("✅ Contains one special character (@, #, $, %, etc.)")
-                .foregroundStyle(.green)
+            if viewModel.isEightCharacterLong {
+                Text("✅ At least 8 characters")
+                    .foregroundStyle(.green)
+            } else {
+                Text("❌ At least 8 characters")
+                    .foregroundStyle(.red)
+            }
+            
+            if viewModel.containsUpperCase {
+                Text("✅ Contains one uppercase letter")
+                    .foregroundStyle(.green)
+            } else {
+                Text("❌ Contains one uppercase letter")
+                    .foregroundStyle(.red)
+            }
+            
+            if viewModel.containsNumber {
+                Text("✅ Contains one number")
+                    .foregroundStyle(.green)
+            } else {
+                Text("❌ Contains one number")
+                    .foregroundStyle(.red)
+            }
+            
+            if viewModel.containsSpecialCharacter {
+                Text("✅ Contains one special character (@, #, $, %, etc.)")
+                    .foregroundStyle(.green)
+            } else {
+                Text("❌ Contains one special character (@, #, $, %, etc.)")
+                    .foregroundStyle(.red)
+            }
+            
         }
         .font(.title3)
         .fontWeight(.semibold)
@@ -127,5 +153,5 @@ extension SignUpView {
 }
 
 #Preview {
-    SignUpView(viewModel: SignUpViewModel())
+    SignUpView(viewModel: SignUpViewModel(validator: Validator()))
 }

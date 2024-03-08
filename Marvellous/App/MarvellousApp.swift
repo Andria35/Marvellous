@@ -27,7 +27,7 @@ struct MarvellousApp: App {
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .signUp:
-                            SignUpView(viewModel: SignUpViewModel())
+                            SignUpView(viewModel: SignUpViewModel(validator: Validator()))
                         case .logIn:
                             LogInView()
                         }
