@@ -11,10 +11,7 @@ import FirebaseAuth
 
 final class SignUpViewModel: ObservableObject {
     
-    
-    func sign() {
-        
-//        Auth.auth().
-    }
+    @Published var email: String = ""
+    @Published var password: String = ""
     
 }

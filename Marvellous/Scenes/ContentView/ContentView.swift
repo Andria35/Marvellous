@@ -17,7 +17,7 @@ struct ContentView: View {
             if showLogIn {
                 LogInView()
             } else {
-                SignUpView()
+                SignUpView(viewModel: SignUpViewModel())
             }
         }
         .fullScreenCover(isPresented: $onboardingIsPresented) {

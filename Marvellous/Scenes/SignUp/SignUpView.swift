@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @State var password: String = ""
+    @StateObject var viewModel: SignUpViewModel
     @EnvironmentObject var router: Router
     
     var body: some View {
@@ -32,7 +32,7 @@ struct SignUpView: View {
                 
                 Spacer()
                 
-                googleAuthenticationVStack
+//                googleAuthenticationVStack
                 
                 Spacer()
                 
@@ -52,19 +52,21 @@ extension SignUpView {
     // MARK: - AuthenticationTextFields
     private var authenticationTextFieldVStack: some View {
         VStack {
-            TextField("Email", text: $password)
+            TextField("Email", text: $viewModel.email)
                 .padding()
                 .background(Color.white)
-                .foregroundStyle(.gray)
-                .fontWeight(.bold)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             
-            TextField("Password", text: $password)
+            SecureField("Password", text: $viewModel.password)
                 .padding()
                 .background(Color.white)
-                .foregroundStyle(.gray)
-                .fontWeight(.bold)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
+            
+            SecureField("Repeat Password", text: $viewModel.password)
+                .padding()
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+
         }
     }
     
@@ -103,5 +105,5 @@ extension SignUpView {
 }
 
 #Preview {
-    SignUpView()
+    SignUpView(viewModel: SignUpViewModel())
 }
