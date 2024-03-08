@@ -24,10 +24,6 @@ struct SignUpView: View {
                 
                 authenticationTextFieldVStack
                 
-//                validatorVStack
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                
                 ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
                     .padding(.top)
                 
@@ -70,11 +66,23 @@ extension SignUpView {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             
-            SecureField("Repeat Password", text: $viewModel.passwordTextFieldText)
+            SecureField("Confirm Password", text: $viewModel.confirmPasswordTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
+                .overlay(alignment: .trailing) {
+                    
+                    if !viewModel.isConfirmPasswordValid  {
+                        Image(systemName: "x.circle.fill")
+                            .foregroundStyle(.red)
+                            .padding()
 
+                    } else {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                            .padding()
+                    }
+                }
         }
     }
     

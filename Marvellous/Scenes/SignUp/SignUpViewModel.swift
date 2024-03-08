@@ -14,16 +14,23 @@ final class SignUpViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
+    @Published var confirmPasswordTextFieldText: String = ""
     
     @Published var isEightCharacterLong: Bool = false
     @Published var containsUpperCase: Bool = false
     @Published var containsNumber: Bool = false
     @Published var containsSpecialCharacter: Bool = false
+    @Published var isConfirmPasswordValid: Bool = false
     
     init(validator: Validator) {
         
         self.validator = validator
+        addSubscribers()
+    }
+    
+    private func addSubscribers() {
         addPasswordTextFieldTextSubscriber()
+        addConfirmPasswordSubscriber()
     }
     
     private func addPasswordTextFieldTextSubscriber() {
@@ -36,6 +43,28 @@ final class SignUpViewModel: ObservableObject {
                 containsSpecialCharacter = validator.isPasswordValidAboutSpecialCharacters(for: password)
             }
             .store(in: &cancellables)
+    }
+    
+    private func addConfirmPasswordSubscriber() {
+        $confirmPasswordTextFieldText
+            .map { [weak self] confirmPassword -> Bool in
+                confirmPassword == self?.passwordTextFieldText
+            }
+            .sink { [weak self] isConfirmPasswordValid in
+                self?.isConfirmPasswordValid = isConfirmPasswordValid
+            }
+            .store(in: &cancellables)
+        
+        $passwordTextFieldText
+            .map { [weak self] password -> Bool in
+                password == self?.confirmPasswordTextFieldText
+            }
+            .sink { [weak self] isConfirmPasswordValid in
+                self?.isConfirmPasswordValid = isConfirmPasswordValid
+            }
+            .store(in: &cancellables)
+        
+        
     }
     
 }
