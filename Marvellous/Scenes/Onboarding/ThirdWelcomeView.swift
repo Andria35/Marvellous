@@ -22,7 +22,7 @@ struct ThirdWelcomeView: View {
                     textVStack
                 }
                 
-                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
+                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red, isDisabled: false)
                     .padding()
                     .padding(.bottom)
                 Spacer()

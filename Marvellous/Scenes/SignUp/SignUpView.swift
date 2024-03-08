@@ -12,8 +12,6 @@ struct SignUpView: View {
     @StateObject var viewModel: SignUpViewModel
     @EnvironmentObject var router: Router
     
-    
-    
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -24,7 +22,9 @@ struct SignUpView: View {
                 
                 authenticationTextFieldVStack
                 
-                ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
+                ButtonComponentView(title: "SignUp", action: {
+                    print("Hey")
+                }, backgroundColor: .red, isDisabled: !(viewModel.isEightCharacterLong && viewModel.containsUpperCase && viewModel.containsNumber && viewModel.containsSpecialCharacter && viewModel.isConfirmPasswordValid))
                     .padding(.top)
                 
                 Text("Forgot Password?")
@@ -60,6 +60,19 @@ extension SignUpView {
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
+                .overlay(alignment: .trailing) {
+
+                    if viewModel.isEmailValid {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                            .padding()
+                    } else {
+                        Image(systemName: "x.circle.fill")
+                            .foregroundStyle(.red)
+                            .padding()
+                    }
+                }
+            
             
             SecureField("Password", text: $viewModel.passwordTextFieldText)
                 .padding()
@@ -72,7 +85,7 @@ extension SignUpView {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .overlay(alignment: .trailing) {
                     
-                    if !viewModel.isConfirmPasswordValid  {
+                    if !viewModel.isConfirmPasswordValid || (viewModel.passwordTextFieldText.isEmpty && viewModel.confirmPasswordTextFieldText.isEmpty) {
                         Image(systemName: "x.circle.fill")
                             .foregroundStyle(.red)
                             .padding()

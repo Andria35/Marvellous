@@ -22,7 +22,7 @@ struct LogInView: View {
                 
                 authenticationTextFieldVStack
                 
-                ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
+                ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red, isDisabled: false)
                     .padding(.top)
                 
                 Text("Forgot Password?")

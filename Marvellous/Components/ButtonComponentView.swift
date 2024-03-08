@@ -13,7 +13,7 @@ struct ButtonComponentView: View {
     let title: String
     var action: () -> Void
     let backgroundColor: Color?
-    
+    let isDisabled: Bool
     // MARK: - Body
     var body: some View {
         Button(action: {
@@ -27,8 +27,9 @@ struct ButtonComponentView: View {
                 .background(backgroundColor == nil ? .black : backgroundColor )
                 .border(backgroundColor == nil ? .red : .clear, width: 4)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
-
         })
+        .disabled(isDisabled)
+
     }
 }
 
@@ -37,6 +38,6 @@ struct ButtonComponentView: View {
     ZStack {
         Color.black
             .ignoresSafeArea()
-        ButtonComponentView(title: "Continue", action: {}, backgroundColor: nil)
+        ButtonComponentView(title: "Continue", action: {}, backgroundColor: nil, isDisabled: false)
     }
 }

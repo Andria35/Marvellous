@@ -21,6 +21,8 @@ final class SignUpViewModel: ObservableObject {
     @Published var containsNumber: Bool = false
     @Published var containsSpecialCharacter: Bool = false
     @Published var isConfirmPasswordValid: Bool = false
+    @Published var isEmailValid: Bool = false
+    
     
     init(validator: Validator) {
         
@@ -29,8 +31,18 @@ final class SignUpViewModel: ObservableObject {
     }
     
     private func addSubscribers() {
+        addEmailTextFieldTextSubscriber()
         addPasswordTextFieldTextSubscriber()
         addConfirmPasswordSubscriber()
+    }
+    
+    private func addEmailTextFieldTextSubscriber() {
+        $emailTextFieldText
+            .sink { [weak self] email in
+                guard let self else { return }
+                isEmailValid = validator.isValidEmail(for: email)
+            }
+            .store(in: &cancellables)
     }
     
     private func addPasswordTextFieldTextSubscriber() {
@@ -63,8 +75,10 @@ final class SignUpViewModel: ObservableObject {
                 self?.isConfirmPasswordValid = isConfirmPasswordValid
             }
             .store(in: &cancellables)
-        
-        
+    }
+    
+    func isSignUpButtonDisabled() -> Bool {
+        (isEightCharacterLong && containsUpperCase && containsNumber && containsSpecialCharacter && isConfirmPasswordValid)
     }
     
 }

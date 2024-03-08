@@ -33,11 +33,11 @@ extension AuthenticationView {
             ButtonComponentView(title: "SignUp", action: {
                 showLogIn = false
                 onboardingIsPresented = false
-            }, backgroundColor: .red)
+            }, backgroundColor: .red, isDisabled: false)
             ButtonComponentView(title: "LogIn", action: {
                 showLogIn = true
                 onboardingIsPresented = false
-            }, backgroundColor: nil)
+            }, backgroundColor: nil, isDisabled: false)
         }
         .padding()
         .padding(.bottom)
