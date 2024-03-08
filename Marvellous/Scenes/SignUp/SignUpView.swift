@@ -22,6 +22,10 @@ struct SignUpView: View {
                 
                 authenticationTextFieldVStack
                 
+//                validatorVStack
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                
                 ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
                     .padding(.top)
                 
@@ -30,9 +34,11 @@ struct SignUpView: View {
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
-                Spacer()
+//                Spacer()
                 
 //                googleAuthenticationVStack
+                validatorVStack
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
                 
@@ -68,6 +74,22 @@ extension SignUpView {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
 
         }
+    }
+    
+    // MARK: - ValidatorVStack
+    private var validatorVStack: some View {
+        VStack(alignment: .leading) {
+            Text("❌ At least 8 characters")
+                .foregroundStyle(.red)
+            Text("❌ Contains one uppercase letter")
+                .foregroundStyle(.red)
+            Text("❌ Contains one number")
+                .foregroundStyle(.red)
+            Text("✅ Contains one special character (@, #, $, %, etc.)")
+                .foregroundStyle(.green)
+        }
+        .font(.title3)
+        .fontWeight(.semibold)
     }
     
     // MARK: - GoogleAuthenticationVStack
