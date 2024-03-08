@@ -24,7 +24,7 @@ struct SignUpView: View {
                 
                 ButtonComponentView(title: "SignUp", action: {
                     print("Hey")
-                }, backgroundColor: .red, isDisabled: !(viewModel.isEightCharacterLong && viewModel.containsUpperCase && viewModel.containsNumber && viewModel.containsSpecialCharacter && viewModel.isConfirmPasswordValid))
+                }, backgroundColor: .red, isDisabled: viewModel.isSignUpButtonDisabled)
                     .padding(.top)
                 
                 Text("Forgot Password?")

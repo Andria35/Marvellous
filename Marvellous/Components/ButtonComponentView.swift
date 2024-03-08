@@ -29,6 +29,7 @@ struct ButtonComponentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
         })
         .disabled(isDisabled)
+        .opacity(isDisabled ? 0.7 : 1)
 
     }
 }
