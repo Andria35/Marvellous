@@ -28,6 +28,8 @@ struct MarvellousApp: App {
                         switch destination {
                         case .signUp:
                             SignUpView()
+                        case .logIn:
+                            LogInView()
                         }
                     }
             }

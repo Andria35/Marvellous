@@ -28,6 +28,10 @@
 		1071FAED2B90D3F3002E9098 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1071FAEC2B90D3F3002E9098 /* GoogleService-Info.plist */; };
 		1071FAF02B90E583002E9098 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1071FAEF2B90E583002E9098 /* FirebaseAnalytics */; };
 		1071FAF42B90E583002E9098 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1071FAF32B90E583002E9098 /* FirebaseAnalyticsSwift */; };
+		1071FB272B931E93002E9098 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FB262B931E93002E9098 /* SignUpViewModel.swift */; };
+		1071FB2A2B932E17002E9098 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1071FB292B932E17002E9098 /* FirebaseAuthCombine-Community */; };
+		10E666ED2B9B0D830059E07D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 10E666EC2B9B0D830059E07D /* FirebaseAuth */; };
+		10E666F02B9B0F7A0059E07D /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E666EF2B9B0F7A0059E07D /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,8 @@
 		1071FAE82B907BB8002E9098 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1071FAEA2B90AD57002E9098 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		1071FAEC2B90D3F3002E9098 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1071FB262B931E93002E9098 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		10E666EF2B9B0F7A0059E07D /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1071FAF42B90E583002E9098 /* FirebaseAnalyticsSwift in Frameworks */,
+				1071FB2A2B932E17002E9098 /* FirebaseAuthCombine-Community in Frameworks */,
 				1071FAF02B90E583002E9098 /* FirebaseAnalytics in Frameworks */,
+				10E666ED2B9B0D830059E07D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +80,7 @@
 			children = (
 				106EE7CD2B8F776900568DAE /* Marvellous */,
 				106EE7CC2B8F776900568DAE /* Products */,
+				1071FB282B932E17002E9098 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +98,7 @@
 				1071FACB2B8F7F3B002E9098 /* App */,
 				1071FACC2B8F7F70002E9098 /* Scenes */,
 				1071FAD32B8F905C002E9098 /* Components */,
+				10E666EE2B9B0F520059E07D /* Managers */,
 				1071FAE42B907B1F002E9098 /* Navigation */,
 				1071FACA2B8F7DEE002E9098 /* Resources */,
 				106EE7DC2B8F7B7700568DAE /* Info.plist */,
@@ -129,6 +139,7 @@
 				1071FACD2B8F7F79002E9098 /* ContentView */,
 				1071FACE2B8F817C002E9098 /* Onboarding */,
 				1071FAE72B907B93002E9098 /* SignUp */,
+				1071FB252B931E73002E9098 /* LogIn */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -177,9 +188,32 @@
 			isa = PBXGroup;
 			children = (
 				1071FAE82B907BB8002E9098 /* SignUpView.swift */,
-				1071FAEA2B90AD57002E9098 /* LogInView.swift */,
+				1071FB262B931E93002E9098 /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		1071FB252B931E73002E9098 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				1071FAEA2B90AD57002E9098 /* LogInView.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		1071FB282B932E17002E9098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10E666EE2B9B0F520059E07D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				10E666EF2B9B0F7A0059E07D /* AuthenticationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +235,8 @@
 			packageProductDependencies = (
 				1071FAEF2B90E583002E9098 /* FirebaseAnalytics */,
 				1071FAF32B90E583002E9098 /* FirebaseAnalyticsSwift */,
+				1071FB292B932E17002E9098 /* FirebaseAuthCombine-Community */,
+				10E666EC2B9B0D830059E07D /* FirebaseAuth */,
 			);
 			productName = Marvellous;
 			productReference = 106EE7CB2B8F776900568DAE /* Marvellous.app */;
@@ -263,6 +299,7 @@
 			files = (
 				1071FAEB2B90AD57002E9098 /* LogInView.swift in Sources */,
 				1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */,
+				1071FB272B931E93002E9098 /* SignUpViewModel.swift in Sources */,
 				1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* ButtonComponentView.swift in Sources */,
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
@@ -270,6 +307,7 @@
 				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
 				1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */,
 				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
+				10E666F02B9B0F7A0059E07D /* AuthenticationManager.swift in Sources */,
 				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
 				1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */,
@@ -507,6 +545,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1071FAEE2B90E583002E9098 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
+		};
+		1071FB292B932E17002E9098 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1071FAEE2B90E583002E9098 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		10E666EC2B9B0D830059E07D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1071FAEE2B90E583002E9098 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     
     @State var password: String = ""
+    @EnvironmentObject var router: Router
     
     var body: some View {
         ZStack {
@@ -19,60 +20,84 @@ struct SignUpView: View {
                 Image("MarvelLogo")
                     .padding()
                 
-                TextField("Email", text: $password)
-                    .padding()
-                    .background(Color.white)
-                    .foregroundStyle(.gray)
-                    .fontWeight(.bold)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                
-                TextField("Password", text: $password)
-                    .padding()
-                    .background(Color.white)
-                    .foregroundStyle(.gray)
-                    .fontWeight(.bold)
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                authenticationTextFieldVStack
                 
                 ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
                     .padding(.top)
-                                
+                
                 Text("Forgot Password?")
                     .foregroundStyle(.white.opacity(0.5))
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
-//                Spacer()
+                Spacer()
                 
-                Text("Or")
-                    .foregroundStyle(.white.opacity(0.5))
-                    .font(.title3)
-                    .padding()
-                
-                Text("Continue With")
-                    .foregroundStyle(.white.opacity(0.9))
-                    .fontWeight(.bold)
-                    .font(.title3)
-                
-                Image("GoogleLogo")
-                    .padding()
-                    .background(Color.white.opacity(0.9))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                googleAuthenticationVStack
                 
                 Spacer()
                 
-                HStack {
-                    Text("Already have an account?")
-                        .foregroundStyle(.white.opacity(0.5))
-                        .font(.title3)
-                    Text("Login")
-                        .font(.title3)
-                        .foregroundStyle(.red)
-                }
-//                .padding(.top)
+                alreadyAccountHStack
+                
                 Spacer()
-
+                
             }
             .padding()
+        }
+    }
+}
+
+// MARK: - UI Components
+extension SignUpView {
+    
+    // MARK: - AuthenticationTextFields
+    private var authenticationTextFieldVStack: some View {
+        VStack {
+            TextField("Email", text: $password)
+                .padding()
+                .background(Color.white)
+                .foregroundStyle(.gray)
+                .fontWeight(.bold)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+            
+            TextField("Password", text: $password)
+                .padding()
+                .background(Color.white)
+                .foregroundStyle(.gray)
+                .fontWeight(.bold)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
+        }
+    }
+    
+    // MARK: - GoogleAuthenticationVStack
+    private var googleAuthenticationVStack: some View {
+        VStack(spacing: 10) {
+            Text("Or")
+            
+            Text("Continue With")
+            
+            Image("GoogleLogo")
+                .padding()
+                .background(Color.white.opacity(0.9))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+        }
+        .foregroundStyle(.white.opacity(0.9))
+        .font(.title3)
+        .fontWeight(.bold)
+    }
+    
+    // MARK: - AlreadyAccountHStack
+    private var alreadyAccountHStack: some View {
+        HStack {
+            Text("Already have an account?")
+                .foregroundStyle(.white.opacity(0.5))
+                .font(.title3)
+            
+            Text("Login")
+                .font(.title3)
+                .foregroundStyle(.red)
+                .onTapGesture {
+                    router.navigate(to: .logIn)
+                }
         }
     }
 }
