@@ -10,7 +10,9 @@ import Combine
 
 final class SignUpViewModel: ObservableObject {
     
+    // MARK: - Properties
     let validator: Validator
+    let authenticatorManager: AuthenticationManager
     var cancellables = Set<AnyCancellable>()
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
@@ -25,13 +27,17 @@ final class SignUpViewModel: ObservableObject {
     
     @Published var isSignUpButtonDisabled: Bool = true
     
+    @Published var userNotCreated: Bool = false
     
-    init(validator: Validator) {
+    // MARK: - Initialization
+    init(validator: Validator, authenticatorManager: AuthenticationManager) {
         
         self.validator = validator
+        self.authenticatorManager = authenticatorManager
         addSubscribers()
     }
     
+    // MARK: - Add Subscriber Methods
     private func addSubscribers() {
         addEmailTextFieldTextSubscriber()
         addPasswordTextFieldTextSubscriber()
@@ -90,8 +96,29 @@ final class SignUpViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    // MARK: - Utility Methods
     private func isSignUpDisabled() -> Bool {
         !(isEightCharacterLong && containsUpperCase && containsNumber && containsSpecialCharacter && isConfirmPasswordValid && isEmailValid)
     }
     
+    func signUp() {
+        guard !emailTextFieldText.isEmpty, !passwordTextFieldText.isEmpty else { return }
+        
+        Task {
+            do {
+                let returnedUserData = try await authenticatorManager.createUser(email: emailTextFieldText, password: passwordTextFieldText)
+                print("Success")
+                print("\(returnedUserData)")
+                await MainActor.run {
+                    userNotCreated = false
+                }
+            } catch {
+                print("Error creating User: \(error)")
+                await MainActor.run {
+                    userNotCreated = true
+                }
+            }
+            
+        }
+    }
 }

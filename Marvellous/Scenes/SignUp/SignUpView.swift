@@ -9,9 +9,11 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    // MARK: - Properties
     @StateObject var viewModel: SignUpViewModel
     @EnvironmentObject var router: Router
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -23,18 +25,15 @@ struct SignUpView: View {
                 authenticationTextFieldVStack
                 
                 ButtonComponentView(title: "SignUp", action: {
-                    print("Hey")
+                    viewModel.signUp()
                 }, backgroundColor: .red, isDisabled: viewModel.isSignUpButtonDisabled)
-                    .padding(.top)
+                .padding(.top)
                 
                 Text("Forgot Password?")
                     .foregroundStyle(.white.opacity(0.5))
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
-//                Spacer()
-                
-//                googleAuthenticationVStack
                 validatorVStack
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -46,6 +45,11 @@ struct SignUpView: View {
                 
             }
             .padding()
+        }
+        .alert("Can't Create Account ❌", isPresented: $viewModel.userNotCreated) {
+            Text("Ok")
+        } message: {
+            Text("Account with this email already exists!")
         }
     }
 }
@@ -61,7 +65,6 @@ extension SignUpView {
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .overlay(alignment: .trailing) {
-
                     if viewModel.isEmailValid {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundStyle(.green)
@@ -72,7 +75,6 @@ extension SignUpView {
                             .padding()
                     }
                 }
-            
             
             SecureField("Password", text: $viewModel.passwordTextFieldText)
                 .padding()
@@ -89,7 +91,7 @@ extension SignUpView {
                         Image(systemName: "x.circle.fill")
                             .foregroundStyle(.red)
                             .padding()
-
+                        
                     } else {
                         Image(systemName: "checkmark.circle.fill")
                             .foregroundStyle(.green)
@@ -139,30 +141,12 @@ extension SignUpView {
         .fontWeight(.semibold)
     }
     
-    // MARK: - GoogleAuthenticationVStack
-    private var googleAuthenticationVStack: some View {
-        VStack(spacing: 10) {
-            Text("Or")
-            
-            Text("Continue With")
-            
-            Image("GoogleLogo")
-                .padding()
-                .background(Color.white.opacity(0.9))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-        }
-        .foregroundStyle(.white.opacity(0.9))
-        .font(.title3)
-        .fontWeight(.bold)
-    }
-    
     // MARK: - AlreadyAccountHStack
     private var alreadyAccountHStack: some View {
         HStack {
             Text("Already have an account?")
                 .foregroundStyle(.white.opacity(0.5))
                 .font(.title3)
-            
             Text("Login")
                 .font(.title3)
                 .foregroundStyle(.red)
@@ -171,8 +155,10 @@ extension SignUpView {
                 }
         }
     }
+    
 }
 
+// MARK: - Preview
 #Preview {
-    SignUpView(viewModel: SignUpViewModel(validator: Validator()))
+    SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
 }
