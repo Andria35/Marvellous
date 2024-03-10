@@ -16,6 +16,7 @@ final class Router: ObservableObject {
         case signUpView
         case logInView
         case chooseAvatarView
+        case enterUsernameView
     }
     
     // MARK: - Methods

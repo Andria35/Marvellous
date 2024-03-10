@@ -10,6 +10,7 @@ import SwiftUI
 struct EnterUsernameView: View {
     
     @State var usernameTextfieldText: String = ""
+    @EnvironmentObject var router: Router
     
     var body: some View {
         ZStack {
@@ -18,11 +19,21 @@ struct EnterUsernameView: View {
             VStack {
                 Image("MarvelLogo")
                     .padding()
+                
                 Text("Enter Your Username")
                     .foregroundStyle(.white)
                     .font(.title)
                     .fontWeight(.bold)
-                Image("VenomAvatarImage")
+                
+                VStack {
+                    Image("VenomAvatarImage")
+                    Text("Change")
+                        .foregroundStyle(.red)
+                        .fontWeight(.bold)
+                        .onTapGesture {
+                            router.navigateBack()
+                        }
+                }
                 
                 TextField("Username", text: $usernameTextfieldText)
                     .padding()
@@ -39,6 +50,8 @@ struct EnterUsernameView: View {
                     .padding()
             }
         }
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

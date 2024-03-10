@@ -10,6 +10,7 @@ import SwiftUI
 struct ChooseAvatarView: View {
     
     // MARK: - Properties
+    @EnvironmentObject var router: Router
     private let gridLayout: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -52,7 +53,9 @@ struct ChooseAvatarView: View {
                 
                 avatarImageGrid
                 
-                ButtonComponentView(title: "Looks Good", action: {}, backgroundColor: nil, isDisabled: false)
+                ButtonComponentView(title: "Looks Good", action: {
+                    router.navigate(to: .enterUsernameView)
+                }, backgroundColor: nil, isDisabled: false)
                     .padding()
             }
         }
@@ -66,7 +69,7 @@ extension ChooseAvatarView {
         ScrollView {
             LazyVGrid(columns: gridLayout) {
                 ForEach(avatarImageNames, id: \.self) { avatarImageName in
-                    AvatarComponentView(imageName: avatarImageName)
+                    AvatarImageComponentView(avatarImageName: avatarImageName)
                 }
             }
         }
