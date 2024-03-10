@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
+		1049DE2B2B9DA3520004C4E7 /* AvatarComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2A2B9DA3520004C4E7 /* AvatarComponentView.swift */; };
 		106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE7CE2B8F776A00568DAE /* MarvellousApp.swift */; };
 		106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106EE7D02B8F776A00568DAE /* ContentView.swift */; };
 		106EE7D32B8F776A00568DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106EE7D22B8F776A00568DAE /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
+		1049DE2A2B9DA3520004C4E7 /* AvatarComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponentView.swift; sourceTree = "<group>"; };
 		106EE7CB2B8F776900568DAE /* Marvellous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvellous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		106EE7CE2B8F776A00568DAE /* MarvellousApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvellousApp.swift; sourceTree = "<group>"; };
 		106EE7D02B8F776A00568DAE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1049DE272B9DA0360004C4E7 /* ChooseAvatar */ = {
+			isa = PBXGroup;
+			children = (
+				1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */,
+			);
+			path = ChooseAvatar;
+			sourceTree = "<group>";
+		};
 		106EE7C22B8F776900568DAE = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,7 @@
 				1071FAD42B8F908F002E9098 /* ButtonComponentView.swift */,
 				1071FAD82B8F935F002E9098 /* OnboardingImageComponentView.swift */,
 				1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */,
+				1049DE2A2B9DA3520004C4E7 /* AvatarComponentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -189,6 +202,7 @@
 		1071FAE72B907B93002E9098 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				1049DE272B9DA0360004C4E7 /* ChooseAvatar */,
 				1071FAE82B907BB8002E9098 /* SignUpView.swift */,
 				1071FB262B931E93002E9098 /* SignUpViewModel.swift */,
 			);
@@ -306,6 +320,7 @@
 				1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* ButtonComponentView.swift in Sources */,
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
+				1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */,
 				1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */,
 				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
 				1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */,
@@ -316,6 +331,7 @@
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
 				1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
+				1049DE2B2B9DA3520004C4E7 /* AvatarComponentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,
 				1071FAE62B907B40002E9098 /* Router.swift in Sources */,
 			);
