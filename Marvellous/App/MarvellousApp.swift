@@ -33,8 +33,8 @@ struct MarvellousApp: App {
                             
                         case .chooseAvatarView:
                             ChooseAvatarView()
-                        case .enterUsernameView:
-                            EnterUsernameView()
+                        case .enterUsernameView(let selectedAvatarImageName):
+                            EnterUsernameView(selectedAvatarImageName: selectedAvatarImageName)
                         }
                     }
             }

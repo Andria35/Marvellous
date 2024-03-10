@@ -9,9 +9,12 @@ import SwiftUI
 
 struct EnterUsernameView: View {
     
+    // MARK: - Properties
+    let selectedAvatarImageName: String
     @State var usernameTextfieldText: String = ""
     @EnvironmentObject var router: Router
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -26,7 +29,7 @@ struct EnterUsernameView: View {
                     .fontWeight(.bold)
                 
                 VStack {
-                    Image("VenomAvatarImage")
+                    Image(selectedAvatarImageName)
                     Text("Change")
                         .foregroundStyle(.red)
                         .fontWeight(.bold)
@@ -56,5 +59,5 @@ struct EnterUsernameView: View {
 }
 
 #Preview {
-    EnterUsernameView()
+    EnterUsernameView(selectedAvatarImageName: "UltronAvatarImage")
 }

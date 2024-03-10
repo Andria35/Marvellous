@@ -11,7 +11,7 @@ struct ChooseAvatarView: View {
     
     // MARK: - Properties
     @EnvironmentObject var router: Router
-    @State var selectedImage: String = ""
+    @State var selectedImageName: String? 
     
     private let gridLayout: [GridItem] = [
         GridItem(.flexible()),
@@ -29,7 +29,7 @@ struct ChooseAvatarView: View {
         case GrootAvatarImage
     }
     
-    
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -46,8 +46,10 @@ struct ChooseAvatarView: View {
                 avatarImageGrid
                 
                 ButtonComponentView(title: "Looks Good", action: {
-                    router.navigate(to: .enterUsernameView)
-                }, backgroundColor: nil, isDisabled: false)
+                    if let selectedImageName {
+                        router.navigate(to: .enterUsernameView(selectedAvatarImageName: selectedImageName))
+                    }
+                }, backgroundColor: nil, isDisabled: selectedImageName == nil ? true : false)
                     .padding()
             }
         }
@@ -61,21 +63,21 @@ extension ChooseAvatarView {
         ScrollView {
             LazyVGrid(columns: gridLayout) {
 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.BlackPantherAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.BlackPantherAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.IronManAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.IronManAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.SpiderManAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.SpiderManAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.DeadPoolAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.DeadPoolAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.UltronAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.UltronAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.VenomAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.VenomAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.ThanosAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.ThanosAvatarImage.rawValue, selectedImageName: $selectedImageName)
                 
-                AvatarImageComponentView(avatarImageName: AvatarImageName.GrootAvatarImage.rawValue, selectedImage: $selectedImage)
+                AvatarImageComponentView(avatarImageName: AvatarImageName.GrootAvatarImage.rawValue, selectedImageName: $selectedImageName)
             }
         }
 
