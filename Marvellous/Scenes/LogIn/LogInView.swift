@@ -92,7 +92,7 @@ extension LogInView {
                 .font(.title3)
                 .foregroundStyle(.red)
                 .onTapGesture {
-                    router.navigate(to: .logIn)
+                    router.navigate(to: .logInView)
                 }
         }
     }

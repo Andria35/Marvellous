@@ -13,8 +13,9 @@ final class Router: ObservableObject {
     
     // MARK: - Destination
     public enum Destination: Codable, Hashable {
-        case signUp
-        case logIn
+        case signUpView
+        case logInView
+        case chooseAvatarView
     }
     
     // MARK: - Methods

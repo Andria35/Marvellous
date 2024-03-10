@@ -101,24 +101,21 @@ final class SignUpViewModel: ObservableObject {
         !(isEightCharacterLong && containsUpperCase && containsNumber && containsSpecialCharacter && isConfirmPasswordValid && isEmailValid)
     }
     
-    func signUp() {
+    func signUp() async {
         guard !emailTextFieldText.isEmpty, !passwordTextFieldText.isEmpty else { return }
         
-        Task {
-            do {
-                let returnedUserData = try await authenticatorManager.createUser(email: emailTextFieldText, password: passwordTextFieldText)
-                print("Success")
-                print("\(returnedUserData)")
-                await MainActor.run {
-                    userNotCreated = false
-                }
-            } catch {
-                print("Error creating User: \(error)")
-                await MainActor.run {
-                    userNotCreated = true
-                }
+        do {
+            let returnedUserData = try await authenticatorManager.createUser(email: emailTextFieldText, password: passwordTextFieldText)
+            print("Success")
+            print("\(returnedUserData)")
+            await MainActor.run {
+                userNotCreated = false
             }
-            
+        } catch {
+            print("Error creating User: \(error)")
+            await MainActor.run {
+                userNotCreated = true
+            }
         }
     }
 }

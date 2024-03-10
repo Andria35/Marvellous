@@ -50,25 +50,31 @@ struct ChooseAvatarView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 
-                ScrollView {
-                    LazyVGrid(columns: gridLayout) {
-                        ForEach(avatarImageNames, id: \.self) { avatarImageName in
-                            AvatarComponentView(imageName: avatarImageName)
-                        }
-                    }
-                }
+                avatarImageGrid
                 
                 ButtonComponentView(title: "Looks Good", action: {}, backgroundColor: nil, isDisabled: false)
                     .padding()
-                
-//                Spacer()
-
             }
-//            .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
+// MARK: - UI Components
+extension ChooseAvatarView {
+    private var avatarImageGrid: some View {
+        ScrollView {
+            LazyVGrid(columns: gridLayout) {
+                ForEach(avatarImageNames, id: \.self) { avatarImageName in
+                    AvatarComponentView(imageName: avatarImageName)
+                }
+            }
+        }
+
+    }
+}
+
+// MARK: - Preview
 #Preview {
     ChooseAvatarView()
 }

@@ -25,7 +25,13 @@ struct SignUpView: View {
                 authenticationTextFieldVStack
                 
                 ButtonComponentView(title: "SignUp", action: {
-                    viewModel.signUp()
+                    Task {
+                        await viewModel.signUp()
+                        if !viewModel.userNotCreated {
+                            router.navigate(to: .chooseAvatarView)
+                        }
+                    }
+                                        
                 }, backgroundColor: .red, isDisabled: viewModel.isSignUpButtonDisabled)
                 .padding(.top)
                 
@@ -45,6 +51,7 @@ struct SignUpView: View {
                 
             }
             .padding()
+            
         }
         .alert("Can't Create Account ❌", isPresented: $viewModel.userNotCreated) {
             Text("Ok")
@@ -151,7 +158,7 @@ extension SignUpView {
                 .font(.title3)
                 .foregroundStyle(.red)
                 .onTapGesture {
-                    router.navigate(to: .logIn)
+                    router.navigate(to: .logInView)
                 }
         }
     }
