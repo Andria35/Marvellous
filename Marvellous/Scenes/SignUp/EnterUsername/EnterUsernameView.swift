@@ -49,7 +49,7 @@ struct EnterUsernameView: View {
                     .padding(.horizontal)
                 Spacer()
                 
-                ButtonComponentView(title: "Call Me This", action: {}, backgroundColor: nil, isDisabled: false)
+                ButtonComponentView(title: "Call Me This", action: {}, backgroundColor: nil, isDisabled: usernameTextfieldText.isEmpty ? true : false)
                     .padding()
             }
         }
@@ -58,6 +58,7 @@ struct EnterUsernameView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     EnterUsernameView(selectedAvatarImageName: "UltronAvatarImage")
 }

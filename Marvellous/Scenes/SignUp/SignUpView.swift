@@ -46,9 +46,6 @@ struct SignUpView: View {
                 Spacer()
                 
                 alreadyAccountHStack
-                
-                Spacer()
-                
             }
             .padding()
             
