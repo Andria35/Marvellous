@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct ProfileCreatedView: View {
+    
+    // MARK: - Properties
+    let avatarImageName: String
+    let username: String
+    
     var body: some View {
+        
         ZStack {
             MainBackgroundComponentView()
             
@@ -24,13 +30,14 @@ struct ProfileCreatedView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 
-                Image("SpiderManAvatarImage")
+                
+                Image(avatarImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 200)
                     .shadow(color: .red, radius: 30)
                 
-                Text("Andria35")
+                Text(username)
                     .foregroundStyle(.white)
                     .font(.title)
                     .fontWeight(.semibold)
@@ -43,12 +50,13 @@ struct ProfileCreatedView: View {
                 .padding()
                 
                 
-                Spacer()
             }
         }
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 
 #Preview {
-    ProfileCreatedView()
+    ProfileCreatedView(avatarImageName: "ThanosAvatarImage", username: "Thanos ;)")
 }

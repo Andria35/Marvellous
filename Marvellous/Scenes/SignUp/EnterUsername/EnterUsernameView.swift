@@ -49,7 +49,9 @@ struct EnterUsernameView: View {
                     .padding(.horizontal)
                 Spacer()
                 
-                ButtonComponentView(title: "Call Me This", action: {}, backgroundColor: nil, isDisabled: usernameTextfieldText.isEmpty ? true : false)
+                ButtonComponentView(title: "Call Me This", action: {
+                    router.navigate(to: .profileCreatedView(avatarImageName: selectedAvatarImageName, username: usernameTextfieldText))
+                }, backgroundColor: nil, isDisabled: usernameTextfieldText.isEmpty ? true : false)
                     .padding()
             }
         }

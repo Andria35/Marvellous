@@ -17,6 +17,7 @@ final class Router: ObservableObject {
         case logInView
         case chooseAvatarView
         case enterUsernameView(selectedAvatarImageName: String)
+        case profileCreatedView(avatarImageName: String, username: String)
     }
     
     // MARK: - Methods
