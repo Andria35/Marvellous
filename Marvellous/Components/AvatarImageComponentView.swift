@@ -10,17 +10,17 @@ import SwiftUI
 struct AvatarImageComponentView: View {
     
     let avatarImageName: String
-    @State var isSelecter: Bool = false
+    @Binding var selectedImage: String
     
     var body: some View {
         Image(avatarImageName)
             .overlay(
-                Color.gray.opacity(isSelecter ? 0.2 : 0.0)
+                Color.gray.opacity(selectedImage == avatarImageName ? 0.4 : 0.0)
                     .clipShape(.circle)
             )
             .onTapGesture {
                 withAnimation {
-                    isSelecter.toggle()
+                    selectedImage = avatarImageName
                 }
             }
 
@@ -30,6 +30,6 @@ struct AvatarImageComponentView: View {
 #Preview {
     ZStack {
         MainBackgroundComponentView()
-        AvatarImageComponentView(avatarImageName: "VenomAvatarImage")
+        AvatarImageComponentView(avatarImageName: "VenomAvatarImage", selectedImage: .constant(""))
     }
 }

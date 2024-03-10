@@ -11,6 +11,8 @@ struct ChooseAvatarView: View {
     
     // MARK: - Properties
     @EnvironmentObject var router: Router
+    @State var selectedImage: String = ""
+    
     private let gridLayout: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -27,16 +29,6 @@ struct ChooseAvatarView: View {
         case GrootAvatarImage
     }
     
-    private let avatarImageNames: [String] = [
-        AvatarImageName.BlackPantherAvatarImage.rawValue,
-        AvatarImageName.IronManAvatarImage.rawValue,
-        AvatarImageName.SpiderManAvatarImage.rawValue,
-        AvatarImageName.DeadPoolAvatarImage.rawValue,
-        AvatarImageName.UltronAvatarImage.rawValue,
-        AvatarImageName.VenomAvatarImage.rawValue,
-        AvatarImageName.ThanosAvatarImage.rawValue,
-        AvatarImageName.GrootAvatarImage.rawValue
-    ]
     
     var body: some View {
         ZStack {
@@ -68,9 +60,22 @@ extension ChooseAvatarView {
     private var avatarImageGrid: some View {
         ScrollView {
             LazyVGrid(columns: gridLayout) {
-                ForEach(avatarImageNames, id: \.self) { avatarImageName in
-                    AvatarImageComponentView(avatarImageName: avatarImageName)
-                }
+
+                AvatarImageComponentView(avatarImageName: AvatarImageName.BlackPantherAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.IronManAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.SpiderManAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.DeadPoolAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.UltronAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.VenomAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.ThanosAvatarImage.rawValue, selectedImage: $selectedImage)
+                
+                AvatarImageComponentView(avatarImageName: AvatarImageName.GrootAvatarImage.rawValue, selectedImage: $selectedImage)
             }
         }
 
