@@ -22,8 +22,20 @@ struct AuthDataResult {
 
 final class AuthenticationManager {
     
+    func getAuthenticatedUser() throws -> AuthDataResult {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        return AuthDataResult(user: user)
+    }
+    
     func createUser(email: String, password: String) async throws -> AuthDataResult {
         let authDataResults = try await Auth.auth().createUser(withEmail: email, password: password)
         return AuthDataResult(user: authDataResults.user)
+    }
+    
+    func signOut() throws {
+        try Auth.auth().signOut()
     }
 }
