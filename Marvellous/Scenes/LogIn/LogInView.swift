@@ -9,11 +9,13 @@ import SwiftUI
 
 struct LogInView: View {
     
+    // MARK: - Properties
     @EnvironmentObject var router: Router
     @StateObject var viewModel: LogInViewModel
     @State var forgotPasswordTapped: Bool = false
     @Binding var showLogIn: Bool
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -51,7 +53,6 @@ struct LogInView: View {
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.hidden)
         }
-
     }
 }
 
@@ -121,6 +122,7 @@ extension LogInView {
     }
 }
 
+// MARK: - Preview
 #Preview {
     LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: .constant(true))
 }
