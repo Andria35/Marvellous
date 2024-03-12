@@ -10,7 +10,7 @@ import SwiftUI
 struct LogInView: View {
     
     @EnvironmentObject var router: Router
-    @State var test: String = ""
+    @StateObject var viewModel: LogInViewModel
     
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct LogInView: View {
                 
                 authenticationTextFieldVStack
                 
-                ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red, isDisabled: false)
+                ButtonComponentView(title: "LogIn", action: {}, backgroundColor: .red, isDisabled: false)
                     .padding(.top)
                 
                 Text("Forgot Password?")
@@ -52,12 +52,12 @@ extension LogInView {
     // MARK: - AuthenticationTextFields
     private var authenticationTextFieldVStack: some View {
         VStack {
-            TextField("Email", text: $test)
+            TextField("Email", text: $viewModel.emailTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
             
-            SecureField("Password", text: $test)
+            SecureField("Password", text: $viewModel.passwordTextFieldText)
                 .padding()
                 .background(Color.white)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -99,5 +99,5 @@ extension LogInView {
 }
 
 #Preview {
-    LogInView()
+    LogInView(viewModel: LogInViewModel())
 }

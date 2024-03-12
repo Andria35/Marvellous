@@ -33,12 +33,8 @@ struct SignUpView: View {
                     }
                                         
                 }, backgroundColor: .red, isDisabled: viewModel.isSignUpButtonDisabled)
-                .padding(.top)
+                .padding(.vertical)
                 
-                Text("Forgot Password?")
-                    .foregroundStyle(.white.opacity(0.5))
-                    .font(.title3)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 validatorVStack
                     .frame(maxWidth: .infinity, alignment: .leading)

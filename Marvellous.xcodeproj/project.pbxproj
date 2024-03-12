@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100E11872BA05179007729E0 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11862BA05179007729E0 /* LogInViewModel.swift */; };
 		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
 		1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */; };
 		1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100E11862BA05179007729E0 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
 		1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageComponentView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				1071FAEA2B90AD57002E9098 /* LogInView.swift */,
+				100E11862BA05179007729E0 /* LogInViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */,
 				1071FAD72B8F92BF002E9098 /* SecondWelcomeView.swift in Sources */,
 				10E666F22B9B17310059E07D /* Validator.swift in Sources */,
+				100E11872BA05179007729E0 /* LogInViewModel.swift in Sources */,
 				10E666F02B9B0F7A0059E07D /* AuthenticationManager.swift in Sources */,
 				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
 				1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */,

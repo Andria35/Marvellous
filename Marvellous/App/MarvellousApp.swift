@@ -29,7 +29,7 @@ struct MarvellousApp: App {
                         case .signUpView:
                             SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
                         case .logInView:
-                            LogInView()
+                            LogInView(viewModel: LogInViewModel())
                             
                         case .chooseAvatarView:
                             ChooseAvatarView()
