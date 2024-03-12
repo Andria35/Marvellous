@@ -13,6 +13,7 @@ final class LogInViewModel: ObservableObject {
     let authenticationManager: AuthenticationManager
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
+    @Published var userCantSignIn: Bool = false
     
     // MARK: - Initialization
     init(authenticationManager: AuthenticationManager) {
@@ -27,8 +28,14 @@ final class LogInViewModel: ObservableObject {
             let returnedUserData = try await authenticationManager.signInUser(email: emailTextFieldText, password: passwordTextFieldText)
             print("Success SignIn")
             print("\(returnedUserData)")
+            await MainActor.run {
+                userCantSignIn = false
+            }
         } catch {
             print("Error Signing In: \(error)")
+            await MainActor.run {
+                userCantSignIn = true
+            }
         }
     }
     

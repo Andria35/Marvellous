@@ -47,6 +47,12 @@ struct LogInView: View {
             }
             .padding()
         }
+        .alert("Can't Log In ❌", isPresented: $viewModel.userCantSignIn) {
+            Text("Ok")
+        } message: {
+            Text("Account with this email and password does not exist!")
+        }
+
     }
 }
 
