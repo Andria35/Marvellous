@@ -21,7 +21,9 @@ struct ResetPasswordView: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
                 
-                ButtonComponentView(title: "Reset Password", action: {}, backgroundColor: .red, isDisabled: viewModel.emailTextFieldText.isEmpty ? true : false)
+                ButtonComponentView(title: "Reset Password", action: {
+                    viewModel.resetPassword()
+                }, backgroundColor: .red, isDisabled: viewModel.emailTextFieldText.isEmpty ? true : false)
                 
                 Spacer()
             }
@@ -31,5 +33,5 @@ struct ResetPasswordView: View {
 }
 
 #Preview {
-    ResetPasswordView(viewModel: ResetPasswordViewModel())
+    ResetPasswordView(viewModel: ResetPasswordViewModel(authenticationManager: AuthenticationManager()))
 }

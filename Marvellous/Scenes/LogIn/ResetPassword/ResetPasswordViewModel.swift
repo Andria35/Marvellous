@@ -9,5 +9,26 @@ import Foundation
 
 final class ResetPasswordViewModel: ObservableObject {
     
+    // MARK: - Properties
+    let authenticationManager: AuthenticationManager
     @Published var emailTextFieldText: String = ""
+    
+    // MARK: - Initialization
+    init(authenticationManager: AuthenticationManager) {
+        self.authenticationManager = authenticationManager
+    }
+    
+    // MARK: - Utility Methods
+    func resetPassword() {
+        
+        guard !emailTextFieldText.isEmpty else { return }
+        Task {
+            do {
+                try await authenticationManager.resetPassword(email: emailTextFieldText)
+            } catch {
+                print("Error reseting Password: \(error)")
+            }
+            
+        }
+    }
 }

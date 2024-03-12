@@ -11,6 +11,7 @@ struct LogInView: View {
     
     @EnvironmentObject var router: Router
     @StateObject var viewModel: LogInViewModel
+    @State var forgotPasswordTapped: Bool = false
     
     var body: some View {
         ZStack {
@@ -33,6 +34,9 @@ struct LogInView: View {
                     .foregroundStyle(.white.opacity(0.5))
                     .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .onTapGesture {
+                        forgotPasswordTapped = true
+                    }
                 
                 Spacer()
                 
@@ -51,6 +55,11 @@ struct LogInView: View {
             Text("Ok")
         } message: {
             Text("Account with this email and password does not exist!")
+        }
+        .sheet(isPresented: $forgotPasswordTapped) {
+            ResetPasswordView(viewModel: ResetPasswordViewModel(authenticationManager: AuthenticationManager()))
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.hidden)
         }
 
     }
