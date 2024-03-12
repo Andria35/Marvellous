@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		100E11872BA05179007729E0 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11862BA05179007729E0 /* LogInViewModel.swift */; };
+		100E118A2BA05EDD007729E0 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11892BA05EDD007729E0 /* ResetPasswordView.swift */; };
+		100E118C2BA05EEF007729E0 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E118B2BA05EEF007729E0 /* ResetPasswordViewModel.swift */; };
 		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
 		1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */; };
 		1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		100E11862BA05179007729E0 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		100E11892BA05EDD007729E0 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		100E118B2BA05EEF007729E0 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
 		1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageComponentView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100E11882BA05EB9007729E0 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				100E11892BA05EDD007729E0 /* ResetPasswordView.swift */,
+				100E118B2BA05EEF007729E0 /* ResetPasswordViewModel.swift */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
 		1049DE272B9DA0360004C4E7 /* ChooseAvatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 		1071FB252B931E73002E9098 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				100E11882BA05EB9007729E0 /* ResetPassword */,
 				1071FAEA2B90AD57002E9098 /* LogInView.swift */,
 				100E11862BA05179007729E0 /* LogInViewModel.swift */,
 			);
@@ -342,7 +356,9 @@
 				1071FAEB2B90AD57002E9098 /* LogInView.swift in Sources */,
 				1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */,
 				1071FAD22B8F8582002E9098 /* FirstWelcomeView.swift in Sources */,
+				100E118A2BA05EDD007729E0 /* ResetPasswordView.swift in Sources */,
 				1049DE332B9DEFA80004C4E7 /* ProfileCreatedView.swift in Sources */,
+				100E118C2BA05EEF007729E0 /* ResetPasswordViewModel.swift in Sources */,
 				1071FB272B931E93002E9098 /* SignUpViewModel.swift in Sources */,
 				1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* ButtonComponentView.swift in Sources */,
