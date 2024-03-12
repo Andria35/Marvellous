@@ -22,7 +22,11 @@ struct LogInView: View {
                 
                 authenticationTextFieldVStack
                 
-                ButtonComponentView(title: "LogIn", action: {}, backgroundColor: .red, isDisabled: false)
+                ButtonComponentView(title: "LogIn", action: {
+                    Task {
+                        await viewModel.signIn()
+                    }
+                }, backgroundColor: .red, isDisabled: false)
                     .padding(.top)
                 
                 Text("Forgot Password?")
@@ -99,5 +103,5 @@ extension LogInView {
 }
 
 #Preview {
-    LogInView(viewModel: LogInViewModel())
+    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()))
 }

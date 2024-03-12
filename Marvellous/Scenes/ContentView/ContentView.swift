@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if showLogIn {
-                LogInView(viewModel: LogInViewModel())
+                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()))
             } else {
                 SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
             }

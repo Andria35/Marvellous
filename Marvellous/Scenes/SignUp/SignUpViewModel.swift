@@ -106,7 +106,7 @@ final class SignUpViewModel: ObservableObject {
         
         do {
             let returnedUserData = try await authenticatorManager.createUser(email: emailTextFieldText, password: passwordTextFieldText)
-            print("Success")
+            print("Success SignUp")
             print("\(returnedUserData)")
             await MainActor.run {
                 userNotCreated = false
