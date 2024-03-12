@@ -12,6 +12,7 @@ struct SignUpView: View {
     // MARK: - Properties
     @StateObject var viewModel: SignUpViewModel
     @EnvironmentObject var router: Router
+    @Binding var showLogIn: Bool
     
     // MARK: - Body
     var body: some View {
@@ -151,7 +152,9 @@ extension SignUpView {
                 .font(.title3)
                 .foregroundStyle(.red)
                 .onTapGesture {
-                    router.navigate(to: .logInView)
+                    withAnimation {
+                        showLogIn = true
+                    }
                 }
         }
     }
@@ -160,5 +163,5 @@ extension SignUpView {
 
 // MARK: - Preview
 #Preview {
-    SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
+    SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: .constant(true))
 }

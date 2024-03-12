@@ -26,11 +26,6 @@ struct MarvellousApp: App {
                 ContentView()
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
-                        case .signUpView:
-                            SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
-                        case .logInView:
-                            LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()))
-                            
                         case .chooseAvatarView:
                             ChooseAvatarView()
                         case .enterUsernameView(let selectedAvatarImageName):

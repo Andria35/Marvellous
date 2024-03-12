@@ -12,6 +12,7 @@ struct LogInView: View {
     @EnvironmentObject var router: Router
     @StateObject var viewModel: LogInViewModel
     @State var forgotPasswordTapped: Bool = false
+    @Binding var showLogIn: Bool
     
     var body: some View {
         ZStack {
@@ -30,22 +31,11 @@ struct LogInView: View {
                 }, backgroundColor: .red, isDisabled: false)
                     .padding(.top)
                 
-                Text("Forgot Password?")
-                    .foregroundStyle(.white.opacity(0.5))
-                    .font(.title3)
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .onTapGesture {
-                        forgotPasswordTapped = true
-                    }
-                
+                forgotPasswordText
                 Spacer()
-                
                 googleAuthenticationVStack
-                
                 Spacer()
-                
-                alreadyAccountHStack
-                
+                dontHaveAccountHStack
                 Spacer()
                 
             }
@@ -83,6 +73,18 @@ extension LogInView {
         }
     }
     
+    // MARK: - ForgotPasswordText
+    private var forgotPasswordText: some View {
+        Text("Forgot Password?")
+            .foregroundStyle(.white.opacity(0.5))
+            .font(.title3)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .onTapGesture {
+                forgotPasswordTapped = true
+            }
+
+    }
+    
     // MARK: - GoogleAuthenticationVStack
     private var googleAuthenticationVStack: some View {
         VStack(spacing: 10) {
@@ -101,22 +103,24 @@ extension LogInView {
     }
     
     // MARK: - AlreadyAccountHStack
-    private var alreadyAccountHStack: some View {
+    private var dontHaveAccountHStack: some View {
         HStack {
-            Text("Already have an account?")
+            Text("Don't have an account?")
                 .foregroundStyle(.white.opacity(0.5))
                 .font(.title3)
             
-            Text("Login")
+            Text("SignUp")
                 .font(.title3)
                 .foregroundStyle(.red)
                 .onTapGesture {
-                    router.navigate(to: .logInView)
+                    withAnimation {
+                        showLogIn = false
+                    }
                 }
         }
     }
 }
 
 #Preview {
-    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()))
+    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: .constant(true))
 }

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ResetPasswordView: View {
     
+    // MARK: - Properties
     @StateObject var viewModel: ResetPasswordViewModel
+    @Environment(\.dismiss) private var dismiss
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -23,6 +26,7 @@ struct ResetPasswordView: View {
                 
                 ButtonComponentView(title: "Reset Password", action: {
                     viewModel.resetPassword()
+                    dismiss()
                 }, backgroundColor: .red, isDisabled: viewModel.emailTextFieldText.isEmpty ? true : false)
                 
                 Spacer()
@@ -32,6 +36,7 @@ struct ResetPasswordView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     ResetPasswordView(viewModel: ResetPasswordViewModel(authenticationManager: AuthenticationManager()))
 }

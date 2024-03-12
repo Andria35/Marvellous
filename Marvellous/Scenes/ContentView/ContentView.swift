@@ -13,12 +13,19 @@ struct ContentView: View {
     @State var showLogIn: Bool = false
     
     var body: some View {
-        Group {
+        ZStack {
+            MainBackgroundComponentView()
             if showLogIn {
-                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()))
+                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: $showLogIn)
+                    .transition(.slide)
             } else {
-                SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
+                SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: $showLogIn)
+                    .transition(.slide)
             }
+//            SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: $showLogIn)
+//                .fullScreenCover(isPresented: $showLogIn, content: {
+//                    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: $showLogIn)
+//                })
         }
         .fullScreenCover(isPresented: $onboardingIsPresented) {
             OnboardingView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)

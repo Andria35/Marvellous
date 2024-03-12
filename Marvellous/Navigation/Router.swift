@@ -13,8 +13,8 @@ final class Router: ObservableObject {
     
     // MARK: - Destination
     public enum Destination: Codable, Hashable {
-        case signUpView
-        case logInView
+//        case signUpView
+//        case logInView
         case chooseAvatarView
         case enterUsernameView(selectedAvatarImageName: String)
         case profileCreatedView(avatarImageName: String, username: String)
