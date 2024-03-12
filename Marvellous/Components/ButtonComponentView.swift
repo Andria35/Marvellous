@@ -13,13 +13,11 @@ struct ButtonComponentView: View {
     let title: String
     var action: () -> Void
     let backgroundColor: Color?
-    
+    let isDisabled: Bool
     // MARK: - Body
     var body: some View {
         Button(action: {
-            withAnimation {
-                action()
-            }
+            action()
         }, label: {
             Text(title)
                 .frame(maxWidth: .infinity)
@@ -27,9 +25,12 @@ struct ButtonComponentView: View {
                 .foregroundStyle(.white)
                 .padding()
                 .background(backgroundColor == nil ? .black : backgroundColor )
-                .clipShape(RoundedRectangle(cornerRadius: 5))
                 .border(backgroundColor == nil ? .red : .clear, width: 4)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
         })
+        .disabled(isDisabled)
+        .opacity(isDisabled ? 0.7 : 1)
+
     }
 }
 
@@ -38,6 +39,6 @@ struct ButtonComponentView: View {
     ZStack {
         Color.black
             .ignoresSafeArea()
-        ButtonComponentView(title: "Continue", action: {}, backgroundColor: nil)
+        ButtonComponentView(title: "Continue", action: {}, backgroundColor: nil, isDisabled: false)
     }
 }

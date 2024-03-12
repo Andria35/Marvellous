@@ -15,19 +15,18 @@ struct SecondWelcomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black
+            MainBackgroundComponentView()
             VStack {
                 ZStack(alignment: .bottom) {
                     OnboardingImageComponentView(imageName: "SecondWelcomeViewImage")
                     textVStack
                 }
-                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
+                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red, isDisabled: false)
                     .padding()
                     .padding(.bottom)
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 

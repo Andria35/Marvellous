@@ -15,20 +15,19 @@ struct FifthWelcomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black
+            MainBackgroundComponentView()
             VStack {
                 ZStack(alignment: .bottom) {
                     OnboardingImageComponentView(imageName: "FifthWelcomeViewImage")
                     getStartedText
                 }
-                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red)
+                ButtonComponentView(title: "Continue", action: buttonTapped, backgroundColor: .red, isDisabled: false)
                     .padding()
                     .padding(.bottom)
                 
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 

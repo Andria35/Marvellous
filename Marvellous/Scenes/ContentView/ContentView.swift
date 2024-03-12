@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var onboardingIsPresented: Bool = true
+    @State var showLogIn: Bool = false
+    
     var body: some View {
-        OnboardingView()
+        Group {
+            if showLogIn {
+                LogInView()
+            } else {
+                SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()))
+            }
+        }
+        .fullScreenCover(isPresented: $onboardingIsPresented) {
+            OnboardingView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)
+            
+        }
     }
 }
-
+    
 #Preview {
-    ContentView()
-}
+        ContentView()
+    }

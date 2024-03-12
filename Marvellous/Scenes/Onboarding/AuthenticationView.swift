@@ -9,19 +9,19 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
+    @Binding var onboardingIsPresented: Bool
+    @Binding var showLogIn: Bool
+    
     // MARK: - Body
     var body: some View {
         ZStack {
-            Color.black
+            MainBackgroundComponentView()
             VStack {
-                ZStack(alignment: .bottom) {
-                    OnboardingImageComponentView(imageName: "AuthenticationViewImage")
-                    authenticationButtonsVStack
-                }
+                OnboardingImageComponentView(imageName: "AuthenticationViewImage")
+                authenticationButtonsVStack
                 Spacer()
             }
         }
-        .ignoresSafeArea()
     }
 }
 
@@ -30,8 +30,14 @@ extension AuthenticationView {
     // MARK: - AuthenticationButtonsVStack
     private var authenticationButtonsVStack: some View {
         VStack {
-            ButtonComponentView(title: "SignUp", action: {}, backgroundColor: .red)
-            ButtonComponentView(title: "LogIn", action: {}, backgroundColor: nil)
+            ButtonComponentView(title: "SignUp", action: {
+                showLogIn = false
+                onboardingIsPresented = false
+            }, backgroundColor: .red, isDisabled: false)
+            ButtonComponentView(title: "LogIn", action: {
+                showLogIn = true
+                onboardingIsPresented = false
+            }, backgroundColor: nil, isDisabled: false)
         }
         .padding()
         .padding(.bottom)
@@ -40,5 +46,5 @@ extension AuthenticationView {
 
 // MARK: - Preview
 #Preview {
-    AuthenticationView()
+    AuthenticationView(onboardingIsPresented: .constant(true), showLogIn: .constant(true))
 }
