@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct LogInView: View {
     
@@ -93,10 +95,11 @@ extension LogInView {
             
             Text("Continue With")
             
-            Image("GoogleLogo")
-                .padding()
-                .background(Color.white.opacity(0.9))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+//            Image("GoogleLogo")
+//                .padding()
+//                .background(Color.white.opacity(0.9))
+//                .clipShape(RoundedRectangle(cornerRadius: 20))
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal), action: {})
         }
         .foregroundStyle(.white.opacity(0.9))
         .font(.title3)
