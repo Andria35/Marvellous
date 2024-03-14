@@ -18,7 +18,7 @@ struct ContentView: View {
         ZStack {
             MainBackgroundComponentView()
             if showLogIn {
-                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: $showLogIn)
+                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), utilities: Utilities()), showLogIn: $showLogIn)
                     .transition(.slide)
             } else {
                 SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: $showLogIn)

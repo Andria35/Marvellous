@@ -6,19 +6,24 @@
 //
 
 import Foundation
+import GoogleSignIn
+import GoogleSignInSwift
+import FirebaseAuth
 
 final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
     let authenticationManager: AuthenticationManager
+    let utilities: Utilities
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
     @Published var userCantSignIn: Bool = false
     
     // MARK: - Initialization
-    init(authenticationManager: AuthenticationManager) {
+    init(authenticationManager: AuthenticationManager, utilities: Utilities) {
         
         self.authenticationManager = authenticationManager
+        self.utilities = utilities
     }
     
     func signIn() async {
@@ -37,6 +42,15 @@ final class LogInViewModel: ObservableObject {
                 userCantSignIn = true
             }
         }
+    }
+    
+    func signInGoogle() async throws {
+        
+        guard let topViewController = await utilities.topViewController() else {
+            return
+        }
+        
+        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topViewController)
     }
         
 }

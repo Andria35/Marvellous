@@ -99,7 +99,9 @@ extension LogInView {
 //                .padding()
 //                .background(Color.white.opacity(0.9))
 //                .clipShape(RoundedRectangle(cornerRadius: 20))
-            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal), action: {})
+            GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal), action: {
+                
+            })
         }
         .foregroundStyle(.white.opacity(0.9))
         .font(.title3)
@@ -127,5 +129,5 @@ extension LogInView {
 
 // MARK: - Preview
 #Preview {
-    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager()), showLogIn: .constant(true))
+    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), utilities: Utilities()), showLogIn: .constant(true))
 }
