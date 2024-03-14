@@ -10,6 +10,11 @@ import GoogleSignIn
 import GoogleSignInSwift
 import FirebaseAuth
 
+struct GoogleSignInResult {
+    let idToken: String
+    let accessToken: String
+}
+
 final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
@@ -57,9 +62,8 @@ final class LogInViewModel: ObservableObject {
         }
         
         let accessToken = gidSignInResult.user.accessToken.tokenString
-        
-        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        
+        let tokens = GoogleSignInResult(idToken: idToken, accessToken: accessToken)
+        let authDataResult = try await authenticationManager.signInWithGoogle(tokens: tokens)
         
     }
         

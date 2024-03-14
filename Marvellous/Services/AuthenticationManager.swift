@@ -55,7 +55,8 @@ extension AuthenticationManager {
 
 // MARK: - Sign in SSO
 extension AuthenticationManager {
-    func signInWithGoogle(credential: AuthCredential) async throws -> AuthDataResult {
+    func signInWithGoogle(tokens: GoogleSignInResult) async throws -> AuthDataResult {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
         return try await signIn(with: credential)
     }
     
