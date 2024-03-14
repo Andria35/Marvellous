@@ -137,5 +137,5 @@ extension LogInView {
 
 // MARK: - Preview
 #Preview {
-    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), utilities: Utilities()), showLogIn: .constant(true))
+    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities())), showLogIn: .constant(true))
 }

@@ -20,16 +20,16 @@ final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
     let authenticationManager: AuthenticationManager
-    let utilities: Utilities
+    let signInGoogleHelper: SignInGoogleHelper
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
     @Published var userCantSignIn: Bool = false
     
     // MARK: - Initialization
-    init(authenticationManager: AuthenticationManager, utilities: Utilities) {
+    init(authenticationManager: AuthenticationManager, signInGoogleHelper: SignInGoogleHelper) {
         
         self.authenticationManager = authenticationManager
-        self.utilities = utilities
+        self.signInGoogleHelper = signInGoogleHelper
     }
     
     func signIn() async {
@@ -52,20 +52,8 @@ final class LogInViewModel: ObservableObject {
     
     func signInGoogle() async throws {
         
-        guard let topViewController =  utilities.topViewController() else {
-            return
-        }
-        
-        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topViewController)
-        
-        guard let idToken = gidSignInResult.user.idToken?.tokenString else {
-            throw URLError(.badServerResponse)
-        }
-        
-        let accessToken = gidSignInResult.user.accessToken.tokenString
-        let tokens = GoogleSignInResult(idToken: idToken, accessToken: accessToken)
+        let tokens = try await signInGoogleHelper.signIn()
         let authDataResult = try await authenticationManager.signInWithGoogle(tokens: tokens)
-        
     }
-        
+    
 }
