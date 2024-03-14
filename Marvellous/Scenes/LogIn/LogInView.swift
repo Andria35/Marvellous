@@ -101,6 +101,14 @@ extension LogInView {
 //                .clipShape(RoundedRectangle(cornerRadius: 20))
             GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal), action: {
                 
+                Task {
+                    
+                    do {
+                        try await viewModel.signInGoogle()
+                    } catch {
+                        print("Error Signing In with google. \(error)")
+                    }
+                }
             })
         }
         .foregroundStyle(.white.opacity(0.9))

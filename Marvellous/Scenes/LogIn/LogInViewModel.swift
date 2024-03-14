@@ -15,6 +15,7 @@ struct GoogleSignInResult {
     let accessToken: String
 }
 
+@MainActor
 final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
@@ -51,7 +52,7 @@ final class LogInViewModel: ObservableObject {
     
     func signInGoogle() async throws {
         
-        guard let topViewController = await utilities.topViewController() else {
+        guard let topViewController =  utilities.topViewController() else {
             return
         }
         
