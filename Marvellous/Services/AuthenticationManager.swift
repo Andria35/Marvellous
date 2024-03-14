@@ -30,6 +30,14 @@ final class AuthenticationManager {
         return AuthDataResult(user: user)
     }
     
+    func signOut() throws {
+        try Auth.auth().signOut()
+    }
+}
+
+// MARK: - Sign In Email
+extension AuthenticationManager {
+    
     func createUser(email: String, password: String) async throws -> AuthDataResult {
         let authDataResults = try await Auth.auth().createUser(withEmail: email, password: password)
         return AuthDataResult(user: authDataResults.user)
@@ -43,8 +51,16 @@ final class AuthenticationManager {
     func resetPassword(email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
     }
+}
+
+// MARK: - Sign in SSO
+extension AuthenticationManager {
+    func signInWithGoogle(credential: AuthCredential) async throws -> AuthDataResult {
+        return try await signIn(with: credential)
+    }
     
-    func signOut() throws {
-        try Auth.auth().signOut()
+    func signIn(with credential: AuthCredential) async throws -> AuthDataResult {
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResult(user: authDataResult.user)
     }
 }

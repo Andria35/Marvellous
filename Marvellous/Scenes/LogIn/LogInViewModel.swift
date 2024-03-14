@@ -51,6 +51,16 @@ final class LogInViewModel: ObservableObject {
         }
         
         let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topViewController)
+        
+        guard let idToken = gidSignInResult.user.idToken?.tokenString else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let accessToken = gidSignInResult.user.accessToken.tokenString
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        
     }
         
 }
