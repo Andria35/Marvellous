@@ -15,6 +15,8 @@
 		100E11932BA1B484007729E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100E11922BA1B484007729E0 /* GoogleService-Info.plist */; };
 		100E11962BA2F95B007729E0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11952BA2F95B007729E0 /* Utilities.swift */; };
 		100E11992BA33BA1007729E0 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */; };
+		100E119C2BA33D77007729E0 /* GoogleSignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */; };
+		100E119E2BA33DB2007729E0 /* AuthenticationDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */; };
 		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
 		1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */; };
 		1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */; };
@@ -53,6 +55,8 @@
 		100E11922BA1B484007729E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		100E11952BA2F95B007729E0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResult.swift; sourceTree = "<group>"; };
+		100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataResult.swift; sourceTree = "<group>"; };
 		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
 		1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageComponentView.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		100E119A2BA33D57007729E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */,
+				100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1049DE272B9DA0360004C4E7 /* ChooseAvatar */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 				1071FACB2B8F7F3B002E9098 /* App */,
 				1071FACC2B8F7F70002E9098 /* Scenes */,
 				1071FAD32B8F905C002E9098 /* Components */,
+				100E119A2BA33D57007729E0 /* Models */,
 				10E666EE2B9B0F520059E07D /* Services */,
 				100E11972BA33B86007729E0 /* Helpers */,
 				1071FAE42B907B1F002E9098 /* Navigation */,
@@ -390,6 +404,7 @@
 				1049DE332B9DEFA80004C4E7 /* ProfileCreatedView.swift in Sources */,
 				100E118C2BA05EEF007729E0 /* ResetPasswordViewModel.swift in Sources */,
 				1071FB272B931E93002E9098 /* SignUpViewModel.swift in Sources */,
+				100E119E2BA33DB2007729E0 /* AuthenticationDataResult.swift in Sources */,
 				1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */,
 				1071FAD52B8F908F002E9098 /* ButtonComponentView.swift in Sources */,
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
@@ -405,6 +420,7 @@
 				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
 				1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */,
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
+				100E119C2BA33D77007729E0 /* GoogleSignInResult.swift in Sources */,
 				1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,

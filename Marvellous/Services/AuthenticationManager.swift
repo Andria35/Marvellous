@@ -8,26 +8,14 @@
 import Foundation
 import FirebaseAuth
 
-struct AuthDataResult {
-    let uid: String
-    let email: String?
-    let photoURL: String?
-    
-    init(user: User) {
-        self.uid = user.uid
-        self.email = user.email
-        self.photoURL = user.photoURL?.absoluteString
-    }
-}
-
 final class AuthenticationManager {
     
-    func getAuthenticatedUser() throws -> AuthDataResult {
+    func getAuthenticatedUser() throws -> AuthenticationDataResult {
         guard let user = Auth.auth().currentUser else {
             throw URLError(.badServerResponse)
         }
         
-        return AuthDataResult(user: user)
+        return AuthenticationDataResult(user: user)
     }
     
     func signOut() throws {
@@ -38,14 +26,14 @@ final class AuthenticationManager {
 // MARK: - Sign In Email
 extension AuthenticationManager {
     
-    func createUser(email: String, password: String) async throws -> AuthDataResult {
+    func createUser(email: String, password: String) async throws -> AuthenticationDataResult {
         let authDataResults = try await Auth.auth().createUser(withEmail: email, password: password)
-        return AuthDataResult(user: authDataResults.user)
+        return AuthenticationDataResult(user: authDataResults.user)
     }
     
-    func signInUser(email: String, password: String) async throws -> AuthDataResult {
+    func signInUser(email: String, password: String) async throws -> AuthenticationDataResult {
         let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
-        return AuthDataResult(user: authDataResult.user)
+        return AuthenticationDataResult(user: authDataResult.user)
     }
     
     func resetPassword(email: String) async throws {
@@ -55,13 +43,13 @@ extension AuthenticationManager {
 
 // MARK: - Sign in SSO
 extension AuthenticationManager {
-    func signInWithGoogle(tokens: GoogleSignInResult) async throws -> AuthDataResult {
+    func signInWithGoogle(tokens: GoogleSignInResult) async throws -> AuthenticationDataResult {
         let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
         return try await signIn(with: credential)
     }
     
-    func signIn(with credential: AuthCredential) async throws -> AuthDataResult {
+    func signIn(with credential: AuthCredential) async throws -> AuthenticationDataResult {
         let authDataResult = try await Auth.auth().signIn(with: credential)
-        return AuthDataResult(user: authDataResult.user)
+        return AuthenticationDataResult(user: authDataResult.user)
     }
 }
