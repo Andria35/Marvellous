@@ -11,6 +11,7 @@ import Combine
 final class SignUpViewModel: ObservableObject {
     
     // MARK: - Properties
+    let userManager: UserManaging
     let validator: Validating
     let authenticatorManager: AuthenticationManaging
     var cancellables = Set<AnyCancellable>()
@@ -30,10 +31,11 @@ final class SignUpViewModel: ObservableObject {
     @Published var userNotCreated: Bool = false
     
     // MARK: - Initialization
-    init(validator: Validating, authenticatorManager: AuthenticationManaging) {
+    init(validator: Validating, authenticatorManager: AuthenticationManaging, userManager: UserManaging) {
         
         self.validator = validator
         self.authenticatorManager = authenticatorManager
+        self.userManager = userManager
         addSubscribers()
     }
     
@@ -106,6 +108,7 @@ final class SignUpViewModel: ObservableObject {
         
         do {
             let returnedUserData = try await authenticatorManager.createUser(email: emailTextFieldText, password: passwordTextFieldText)
+//            try await userManager.createNewUser(auth: returnedUserData)
             print("Success SignUp")
             print("\(returnedUserData)")
             await MainActor.run {

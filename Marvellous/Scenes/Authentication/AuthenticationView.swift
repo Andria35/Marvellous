@@ -21,7 +21,7 @@ struct AuthenticationView: View {
                 LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities())), showLogIn: $showLogIn)
                     .transition(.slide)
             } else {
-                SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: $showLogIn)
+                SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager(), userManager: UserManager()), showLogIn: $showLogIn)
                     .transition(.slide)
             }
             

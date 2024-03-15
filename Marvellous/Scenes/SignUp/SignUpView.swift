@@ -163,5 +163,5 @@ extension SignUpView {
 
 // MARK: - Preview
 #Preview {
-    SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: .constant(true))
+    SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager(), userManager: UserManager()), showLogIn: .constant(true))
 }
