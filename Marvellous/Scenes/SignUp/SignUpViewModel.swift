@@ -12,7 +12,7 @@ final class SignUpViewModel: ObservableObject {
     
     // MARK: - Properties
     let validator: Validator
-    let authenticatorManager: AuthenticationManager
+    let authenticatorManager: AuthenticationManaging
     var cancellables = Set<AnyCancellable>()
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
@@ -30,7 +30,7 @@ final class SignUpViewModel: ObservableObject {
     @Published var userNotCreated: Bool = false
     
     // MARK: - Initialization
-    init(validator: Validator, authenticatorManager: AuthenticationManager) {
+    init(validator: Validator, authenticatorManager: AuthenticationManaging) {
         
         self.validator = validator
         self.authenticatorManager = authenticatorManager

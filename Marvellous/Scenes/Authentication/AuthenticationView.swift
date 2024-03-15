@@ -9,9 +9,11 @@ import SwiftUI
 
 struct AuthenticationView: View {
     
+    // MARK: - Properties
     @State var onboardingIsPresented: Bool = true
     @State var showLogIn: Bool = false
     
+    // MARK: - Body
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
@@ -22,7 +24,7 @@ struct AuthenticationView: View {
                 SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager()), showLogIn: $showLogIn)
                     .transition(.slide)
             }
-
+            
             OnboardingView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)
                 .opacity(onboardingIsPresented ? 1 : 0)
         }

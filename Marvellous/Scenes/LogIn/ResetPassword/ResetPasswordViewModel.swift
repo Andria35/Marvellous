@@ -10,11 +10,11 @@ import Foundation
 final class ResetPasswordViewModel: ObservableObject {
     
     // MARK: - Properties
-    let authenticationManager: AuthenticationManager
+    let authenticationManager: AuthenticationManaging
     @Published var emailTextFieldText: String = ""
     
     // MARK: - Initialization
-    init(authenticationManager: AuthenticationManager) {
+    init(authenticationManager: AuthenticationManaging) {
         self.authenticationManager = authenticationManager
     }
     

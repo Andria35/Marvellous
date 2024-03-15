@@ -8,7 +8,17 @@
 import Foundation
 import FirebaseAuth
 
-final class AuthenticationManager {
+protocol AuthenticationManaging {
+    func getAuthenticatedUser() throws -> AuthenticationDataResult
+    func signOut() throws
+    func createUser(email: String, password: String) async throws -> AuthenticationDataResult
+    func signInUser(email: String, password: String) async throws -> AuthenticationDataResult
+    func resetPassword(email: String) async throws
+    func signInWithGoogle(tokens: GoogleSignInResult) async throws -> AuthenticationDataResult
+    func signIn(with credential: AuthCredential) async throws -> AuthenticationDataResult
+}
+
+final class AuthenticationManager: AuthenticationManaging {
     
     func getAuthenticatedUser() throws -> AuthenticationDataResult {
         guard let user = Auth.auth().currentUser else {

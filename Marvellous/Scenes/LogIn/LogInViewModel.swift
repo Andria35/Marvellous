@@ -12,14 +12,14 @@ import FirebaseAuth
 final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
-    let authenticationManager: AuthenticationManager
+    let authenticationManager: AuthenticationManaging
     let signInGoogleHelper: SignInGoogleHelper
     @Published var emailTextFieldText: String = ""
     @Published var passwordTextFieldText: String = ""
     @Published var userCantSignIn: Bool = false
     
     // MARK: - Initialization
-    init(authenticationManager: AuthenticationManager, signInGoogleHelper: SignInGoogleHelper) {
+    init(authenticationManager: AuthenticationManaging, signInGoogleHelper: SignInGoogleHelper) {
         self.authenticationManager = authenticationManager
         self.signInGoogleHelper = signInGoogleHelper
     }

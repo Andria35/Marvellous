@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FinalWelcomeView: View {
     
+    // MARK: - Properties
     @Binding var onboardingIsPresented: Bool
     @Binding var showLogIn: Bool
     
@@ -31,14 +32,16 @@ extension FinalWelcomeView {
     private var authenticationButtonsVStack: some View {
         VStack {
             ButtonComponentView(title: "SignUp", action: {
-                showLogIn = false
-                onboardingIsPresented = false
-                
+                withAnimation {
+                    showLogIn = false
+                    onboardingIsPresented = false
+                }
             }, backgroundColor: .red, isDisabled: false)
             ButtonComponentView(title: "LogIn", action: {
-                showLogIn = true
-                onboardingIsPresented = false
-                
+                withAnimation {
+                    showLogIn = true
+                    onboardingIsPresented = false
+                }
             }, backgroundColor: nil, isDisabled: false)
         }
         .padding()

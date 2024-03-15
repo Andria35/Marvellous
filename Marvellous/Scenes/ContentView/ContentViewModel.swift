@@ -9,19 +9,19 @@ import Foundation
 
 final class ContentViewModel: ObservableObject {
     
-    let authenticationManager: AuthenticationManager
-    @Published var showHomeScreen: Bool = false
+    // MARK: - Properties
+    let authenticationManager: AuthenticationManaging
     @Published var authenticatedUser: AuthenticationDataResult?
-    @Published var onboardingIsPresented: Bool = true
+    @Published var userIsLoggedIn: Bool = false
 
-    
-    init(authenticationManager: AuthenticationManager) {
+    // MARK: - Initialization
+    init(authenticationManager: AuthenticationManaging) {
         self.authenticationManager = authenticationManager
     }
     
+    // MARK: - Utility Methods
     func getAuthenticatedUser() {
         authenticatedUser = try? authenticationManager.getAuthenticatedUser()
-        showHomeScreen = authenticatedUser == nil
-        onboardingIsPresented = !showHomeScreen
+        userIsLoggedIn = authenticatedUser != nil
     }
 }
