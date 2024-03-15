@@ -1,5 +1,5 @@
 //
-//  AuthenticationView.swift
+//  FinalWelcomeView.swift
 //  Marvellous
 //
 //  Created by Andria Inasaridze on 28.02.24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AuthenticationView: View {
+struct FinalWelcomeView: View {
     
     @Binding var onboardingIsPresented: Bool
     @Binding var showLogIn: Bool
@@ -26,7 +26,7 @@ struct AuthenticationView: View {
 }
 
 // MARK: - UI Components
-extension AuthenticationView {
+extension FinalWelcomeView {
     // MARK: - AuthenticationButtonsVStack
     private var authenticationButtonsVStack: some View {
         VStack {
@@ -48,5 +48,5 @@ extension AuthenticationView {
 
 // MARK: - Preview
 #Preview {
-    AuthenticationView(onboardingIsPresented: .constant(true), showLogIn: .constant(true))
+    FinalWelcomeView(onboardingIsPresented: .constant(true), showLogIn: .constant(true))
 }

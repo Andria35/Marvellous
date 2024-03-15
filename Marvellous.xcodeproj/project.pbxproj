@@ -17,6 +17,8 @@
 		100E11992BA33BA1007729E0 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */; };
 		100E119C2BA33D77007729E0 /* GoogleSignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */; };
 		100E119E2BA33DB2007729E0 /* AuthenticationDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */; };
+		100E11A02BA3549A007729E0 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119F2BA3549A007729E0 /* ContentViewModel.swift */; };
+		100E11A62BA43C9D007729E0 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11A52BA43C9D007729E0 /* AuthenticationView.swift */; };
 		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
 		1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */; };
 		1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */; };
@@ -34,7 +36,7 @@
 		1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */; };
 		1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */; };
 		1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */; };
-		1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */; };
+		1071FAE12B8FC0AF002E9098 /* FinalWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE02B8FC0AF002E9098 /* FinalWelcomeView.swift */; };
 		1071FAE32B907A92002E9098 /* MainBackgroundComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */; };
 		1071FAE62B907B40002E9098 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE52B907B40002E9098 /* Router.swift */; };
 		1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071FAE82B907BB8002E9098 /* SignUpView.swift */; };
@@ -57,6 +59,8 @@
 		100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResult.swift; sourceTree = "<group>"; };
 		100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataResult.swift; sourceTree = "<group>"; };
+		100E119F2BA3549A007729E0 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		100E11A52BA43C9D007729E0 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
 		1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageComponentView.swift; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeView.swift; sourceTree = "<group>"; };
 		1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthWelcomeView.swift; sourceTree = "<group>"; };
 		1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthWelcomeView.swift; sourceTree = "<group>"; };
-		1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		1071FAE02B8FC0AF002E9098 /* FinalWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalWelcomeView.swift; sourceTree = "<group>"; };
 		1071FAE22B907A92002E9098 /* MainBackgroundComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBackgroundComponentView.swift; sourceTree = "<group>"; };
 		1071FAE52B907B40002E9098 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1071FAE82B907BB8002E9098 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,14 @@
 				100E119D2BA33DB2007729E0 /* AuthenticationDataResult.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		100E11A22BA43BAC007729E0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				100E11A52BA43C9D007729E0 /* AuthenticationView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		1049DE272B9DA0360004C4E7 /* ChooseAvatar */ = {
@@ -227,6 +239,7 @@
 			children = (
 				1071FACD2B8F7F79002E9098 /* ContentView */,
 				1071FACE2B8F817C002E9098 /* Onboarding */,
+				100E11A22BA43BAC007729E0 /* Authentication */,
 				1071FAE72B907B93002E9098 /* SignUp */,
 				1071FB252B931E73002E9098 /* LogIn */,
 			);
@@ -237,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				106EE7D02B8F776A00568DAE /* ContentView.swift */,
+				100E119F2BA3549A007729E0 /* ContentViewModel.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -250,7 +264,7 @@
 				1071FADA2B8FABBE002E9098 /* ThirdWelcomeView.swift */,
 				1071FADC2B8FAD79002E9098 /* FourthWelcomeView.swift */,
 				1071FADE2B8FAEAA002E9098 /* FifthWelcomeView.swift */,
-				1071FAE02B8FC0AF002E9098 /* AuthenticationView.swift */,
+				1071FAE02B8FC0AF002E9098 /* FinalWelcomeView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -410,6 +424,7 @@
 				1071FAD02B8F82DF002E9098 /* OnboardingView.swift in Sources */,
 				1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */,
 				1071FADB2B8FABBE002E9098 /* ThirdWelcomeView.swift in Sources */,
+				100E11A02BA3549A007729E0 /* ContentViewModel.swift in Sources */,
 				100E11992BA33BA1007729E0 /* SignInGoogleHelper.swift in Sources */,
 				1071FAD92B8F935F002E9098 /* OnboardingImageComponentView.swift in Sources */,
 				1071FADD2B8FAD79002E9098 /* FourthWelcomeView.swift in Sources */,
@@ -417,10 +432,11 @@
 				10E666F22B9B17310059E07D /* Validator.swift in Sources */,
 				100E11872BA05179007729E0 /* LogInViewModel.swift in Sources */,
 				10E666F02B9B0F7A0059E07D /* AuthenticationManager.swift in Sources */,
-				1071FAE12B8FC0AF002E9098 /* AuthenticationView.swift in Sources */,
+				1071FAE12B8FC0AF002E9098 /* FinalWelcomeView.swift in Sources */,
 				1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */,
 				1071FADF2B8FAEAA002E9098 /* FifthWelcomeView.swift in Sources */,
 				100E119C2BA33D77007729E0 /* GoogleSignInResult.swift in Sources */,
+				100E11A62BA43C9D007729E0 /* AuthenticationView.swift in Sources */,
 				1071FAE92B907BB8002E9098 /* SignUpView.swift in Sources */,
 				106EE7D12B8F776A00568DAE /* ContentView.swift in Sources */,
 				106EE7CF2B8F776A00568DAE /* MarvellousApp.swift in Sources */,

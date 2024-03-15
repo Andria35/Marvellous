@@ -60,7 +60,7 @@ struct OnboardingView: View {
                 }
             }
             .tag(TabViewTabs.fifthWelcomeView)
-            AuthenticationView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)
+            FinalWelcomeView(onboardingIsPresented: $onboardingIsPresented, showLogIn: $showLogIn)
                 .tag(TabViewTabs.authenticationView)
         }
         .ignoresSafeArea()

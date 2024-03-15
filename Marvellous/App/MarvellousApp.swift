@@ -23,7 +23,7 @@ struct MarvellousApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $router.navigationPath) {
-                ContentView()
+                ContentView( viewModel: ContentViewModel(authenticationManager: AuthenticationManager()))
                     .navigationDestination(for: Router.Destination.self) { destination in
                         switch destination {
                         case .chooseAvatarView:

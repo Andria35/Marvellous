@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import GoogleSignIn
-import GoogleSignInSwift
 import FirebaseAuth
 
 @MainActor
@@ -22,7 +20,6 @@ final class LogInViewModel: ObservableObject {
     
     // MARK: - Initialization
     init(authenticationManager: AuthenticationManager, signInGoogleHelper: SignInGoogleHelper) {
-        
         self.authenticationManager = authenticationManager
         self.signInGoogleHelper = signInGoogleHelper
     }
