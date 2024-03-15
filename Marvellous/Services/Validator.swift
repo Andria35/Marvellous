@@ -7,7 +7,16 @@
 
 import Foundation
 
-final class Validator {
+protocol Validating {
+    func isValidEmail(for email: String) -> Bool
+    func isValidUsername(for username: String) -> Bool
+    func isPasswordValidAboutUpperCase(for password: String) -> Bool
+    func isPasswordValidAboutNumbers(for password: String) -> Bool
+    func isPasswordValidAboutSpecialCharacters(for password: String) -> Bool
+    func isPasswordValidAboutLength(for password: String) -> Bool
+}
+
+final class Validator: Validating {
     
     func isValidEmail(for email: String) -> Bool {
         let email = email.trimmingCharacters(in: .whitespacesAndNewlines)

@@ -11,7 +11,7 @@ import Combine
 final class SignUpViewModel: ObservableObject {
     
     // MARK: - Properties
-    let validator: Validator
+    let validator: Validating
     let authenticatorManager: AuthenticationManaging
     var cancellables = Set<AnyCancellable>()
     @Published var emailTextFieldText: String = ""
@@ -30,7 +30,7 @@ final class SignUpViewModel: ObservableObject {
     @Published var userNotCreated: Bool = false
     
     // MARK: - Initialization
-    init(validator: Validator, authenticatorManager: AuthenticationManaging) {
+    init(validator: Validating, authenticatorManager: AuthenticationManaging) {
         
         self.validator = validator
         self.authenticatorManager = authenticatorManager
