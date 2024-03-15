@@ -9,6 +9,13 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+struct DatabaseUser {
+    let userId: String
+    let email: String?
+    let photoURL: String?
+    let dateCreated: Data?
+}
+
 protocol UserManaging {
     func createNewUser(auth: AuthenticationDataResult) async throws
 }
@@ -29,5 +36,22 @@ final class UserManager: UserManaging {
         }
         
        try await Firestore.firestore().collection("users").document(auth.uid).setData(userData, merge: false)
+    }
+    
+    func getUser(userId: String) async throws -> DatabaseUser {
+        
+        let snapshot = try await Firestore.firestore().collection("users").document(userId).getDocument()
+        
+        guard 
+            let data = snapshot.data(),
+            let userId = data["user_id"] as? String else {
+            throw URLError(.badServerResponse)
+        }
+        
+        let email = data["email"] as? String
+        let photoURL = data["photo_url"] as? String
+        let dateCreated = data["date_created"] as? Data
+        
+        return DatabaseUser(userId: userId, email: email, photoURL: photoURL, dateCreated: dateCreated)
     }
 }
