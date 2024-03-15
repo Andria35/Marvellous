@@ -31,6 +31,7 @@ struct AuthenticationView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     AuthenticationView()
 }
