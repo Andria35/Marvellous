@@ -25,12 +25,12 @@ struct DatabaseUser: Codable {
     }
     
     init(
-    userId: String,
-    email: String? = nil,
-    photoUrl: String? = nil,
-    dateCreated: Data? = nil,
-    username: String? = nil,
-    avatarName: String? = nil
+        userId: String,
+        email: String? = nil,
+        photoUrl: String? = nil,
+        dateCreated: Data? = nil,
+        username: String? = nil,
+        avatarName: String? = nil
     ) {
         self.userId = userId
         self.email = email
@@ -48,7 +48,7 @@ struct DatabaseUser: Codable {
         case username = "username"
         case avatarImageName = "avatar_image_name"
     }
-
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.userId = try container.decode(String.self, forKey: .userId)

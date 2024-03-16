@@ -18,7 +18,7 @@ struct AuthenticationView: View {
         ZStack {
             MainBackgroundComponentView()
             if showLogIn {
-                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities())), showLogIn: $showLogIn)
+                LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities()), userManager: UserManager()), showLogIn: $showLogIn)
                     .transition(.slide)
             } else {
                 SignUpView(viewModel: SignUpViewModel(validator: Validator(), authenticatorManager: AuthenticationManager(), userManager: UserManager()), showLogIn: $showLogIn)

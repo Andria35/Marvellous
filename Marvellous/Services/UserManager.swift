@@ -29,6 +29,11 @@ final class UserManager: UserManaging {
     }
         
     func createNewUser(user: DatabaseUser) async throws {
+        let documentSnapshot = try await userDocument(userId: user.userId).getDocument()
+        guard !documentSnapshot.exists else {
+            print("User already exists")
+            return
+        }
         try userDocument(userId: user.userId).setData(from: user, merge: false)
     }
     

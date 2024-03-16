@@ -95,12 +95,7 @@ extension LogInView {
             
             Text("Continue With")
             
-//            Image("GoogleLogo")
-//                .padding()
-//                .background(Color.white.opacity(0.9))
-//                .clipShape(RoundedRectangle(cornerRadius: 20))
             GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark, style: .icon, state: .normal), action: {
-                
                 Task {
                     
                     do {
@@ -137,5 +132,5 @@ extension LogInView {
 
 // MARK: - Preview
 #Preview {
-    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities())), showLogIn: .constant(true))
+    LogInView(viewModel: LogInViewModel(authenticationManager: AuthenticationManager(), signInGoogleHelper: SignInGoogleHelper(utilities: Utilities()), userManager: UserManager()), showLogIn: .constant(true))
 }

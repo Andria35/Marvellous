@@ -12,6 +12,7 @@ import FirebaseAuth
 final class LogInViewModel: ObservableObject {
     
     // MARK: - Properties
+    let userManager: UserManaging
     let authenticationManager: AuthenticationManaging
     let signInGoogleHelper: SignInGoogleHelper
     @Published var emailTextFieldText: String = ""
@@ -19,9 +20,10 @@ final class LogInViewModel: ObservableObject {
     @Published var userCantSignIn: Bool = false
     
     // MARK: - Initialization
-    init(authenticationManager: AuthenticationManaging, signInGoogleHelper: SignInGoogleHelper) {
+    init(authenticationManager: AuthenticationManaging, signInGoogleHelper: SignInGoogleHelper, userManager: UserManaging) {
         self.authenticationManager = authenticationManager
         self.signInGoogleHelper = signInGoogleHelper
+        self.userManager = userManager
     }
     
     func signIn() async {
@@ -45,6 +47,8 @@ final class LogInViewModel: ObservableObject {
     func signInGoogle() async throws {
         let tokens = try await signInGoogleHelper.signIn()
         let authDataResult = try await authenticationManager.signInWithGoogle(tokens: tokens)
+        let user = DatabaseUser(auth: authDataResult)
+        try await userManager.createNewUser(user: user)
     }
     
 }
