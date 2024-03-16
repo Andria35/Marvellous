@@ -111,7 +111,8 @@ final class SignUpViewModel: ObservableObject {
 //            try await userManager.createNewUser(auth: returnedUserData)
             let user = DatabaseUser(auth: returnedUserData)
             try await userManager.createNewUser(user: user)
-            try await userManager.updateUserUsername(forId: user.userId, with: "AAng")
+            try await userManager.updateUserUsername(forId: user.userId, with: "Lebron James")
+            try await userManager.updateUserAvatarImageName(forId: user.userId, with: "Kevin Durant")
             
             print("Success SignUp")
             print("\(returnedUserData)")
