@@ -13,6 +13,8 @@ import FirebaseFirestoreSwift
 
 protocol UserManaging {
     func createNewUser(user: DatabaseUser) async throws
+    func getUser(userId: String) async throws -> DatabaseUser
+    func updateUser(user: DatabaseUser) async throws
     func updateUserUsername(forId userId: String, with username: String) async throws
     func updateUserAvatarImageName(forId userId: String, with avatarImageName: String) async throws
 }
@@ -25,20 +27,7 @@ final class UserManager: UserManaging {
     private func userDocument(userId: String) -> DocumentReference {
         userCollection.document(userId)
     }
-    
-//    private let encoder: Firestore.Encoder = {
-//        let encoder = Firestore.Encoder()
-//        encoder.keyEncodingStrategy = .convertToSnakeCase
-//        return encoder
-//    }()
-//    
-//    private let decoder: Firestore.Decoder = {
-//        let decoder = Firestore.Decoder()
-//        decoder.keyDecodingStrategy = .convertFromSnakeCase
-//        return decoder
-//        
-//    }()
-    
+        
     func createNewUser(user: DatabaseUser) async throws {
         try userDocument(userId: user.userId).setData(from: user, merge: false)
     }
