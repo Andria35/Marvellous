@@ -31,7 +31,7 @@ struct MarvellousApp: App {
                         case .enterUsernameView(let selectedAvatarImageName):
                             EnterUsernameView(selectedAvatarImageName: selectedAvatarImageName)
                         case .profileCreatedView(let avatarImageName, let username):
-                            ProfileCreatedView(avatarImageName: avatarImageName, username: username)
+                            ProfileCreatedView(viewModel: ProfileIsCreatedViewModel(avatarImageName: avatarImageName, username: username, userManager: UserManager(), authenticationManager: AuthenticationManager()))
                         }
                     }
             }
