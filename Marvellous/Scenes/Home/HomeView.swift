@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var viewModel: HomeViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            MainBackgroundComponentView()
+            Text("\(viewModel.user?.email ?? "hehe")")
+                .foregroundStyle(.white)
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(viewModel: HomeViewModel(userId: "nKSj3D9VQDOQD7W67yGGPWZ4bfo1", userManager: UserManager()))
 }

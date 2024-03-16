@@ -9,8 +9,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
-
 protocol UserManaging {
     func createNewUser(user: DatabaseUser) async throws
     func getUser(userId: String) async throws -> DatabaseUser
