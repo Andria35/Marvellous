@@ -13,14 +13,11 @@ struct ProfileCreatedView: View {
     @StateObject var viewModel: ProfileIsCreatedViewModel
     
     var body: some View {
-        
         ZStack {
             MainBackgroundComponentView()
-            
             VStack {
                 Image("MarvelLogo")
                     .padding()
-                
                 VStack {
                     Text("Your Profile Is Created")
                     Text("Successfully!!")
@@ -28,7 +25,6 @@ struct ProfileCreatedView: View {
                 .foregroundStyle(.white)
                 .font(.title)
                 .fontWeight(.bold)
-                
                 
                 Image(viewModel.avatarImageName)
                     .resizable()
@@ -44,14 +40,11 @@ struct ProfileCreatedView: View {
                 Spacer()
                 
                 ButtonComponentView(title: "Let's Get Started!!!", action: {
-                    
                     Task {
                         await viewModel.updateUser()
                     }
                 }, backgroundColor: .red, isDisabled: false)
                 .padding()
-                
-                
             }
         }
         .navigationBarBackButtonHidden(true)

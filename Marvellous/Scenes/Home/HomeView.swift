@@ -14,12 +14,18 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             MainBackgroundComponentView()
-            Text("\(viewModel.user?.email ?? "hehe")")
-                .foregroundStyle(.white)
+            VStack {
+                Image(viewModel.user?.avatarImageName ?? "")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .shadow(color: .red, radius: 10)
+                Text("\(viewModel.user?.username ?? "")")
+                    .foregroundStyle(.white)
+            }
         }
     }
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel(userId: "nKSj3D9VQDOQD7W67yGGPWZ4bfo1", userManager: UserManager()))
+    HomeView(viewModel: HomeViewModel(userId: "yBZ8pk3yLFROG5ZaFcOTKm4WxaC2", userManager: UserManager()))
 }

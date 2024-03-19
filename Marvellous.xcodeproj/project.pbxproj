@@ -12,7 +12,6 @@
 		100E118C2BA05EEF007729E0 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E118B2BA05EEF007729E0 /* ResetPasswordViewModel.swift */; };
 		100E118F2BA0E082007729E0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 100E118E2BA0E082007729E0 /* GoogleSignIn */; };
 		100E11912BA0E082007729E0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 100E11902BA0E082007729E0 /* GoogleSignInSwift */; };
-		100E11932BA1B484007729E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100E11922BA1B484007729E0 /* GoogleService-Info.plist */; };
 		100E11962BA2F95B007729E0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11952BA2F95B007729E0 /* Utilities.swift */; };
 		100E11992BA33BA1007729E0 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */; };
 		100E119C2BA33D77007729E0 /* GoogleSignInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */; };
@@ -27,6 +26,7 @@
 		100E11B32BA47990007729E0 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11B22BA47990007729E0 /* UserManager.swift */; };
 		100E11B52BA5ABE9007729E0 /* DatabaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11B42BA5ABE9007729E0 /* DatabaseUser.swift */; };
 		100E11B72BA5C439007729E0 /* ProfileIsCreatedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100E11B62BA5C439007729E0 /* ProfileIsCreatedViewModel.swift */; };
+		100E11DA2BA9C047007729E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 100E11D92BA9C047007729E0 /* GoogleService-Info.plist */; };
 		1049DE292B9DA05B0004C4E7 /* ChooseAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */; };
 		1049DE2E2B9DC1130004C4E7 /* EnterUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */; };
 		1049DE302B9DDA1D0004C4E7 /* AvatarImageComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */; };
@@ -62,7 +62,6 @@
 		100E11862BA05179007729E0 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		100E11892BA05EDD007729E0 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		100E118B2BA05EEF007729E0 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
-		100E11922BA1B484007729E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		100E11952BA2F95B007729E0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		100E11982BA33BA1007729E0 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		100E119B2BA33D77007729E0 /* GoogleSignInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInResult.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		100E11B22BA47990007729E0 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		100E11B42BA5ABE9007729E0 /* DatabaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUser.swift; sourceTree = "<group>"; };
 		100E11B62BA5C439007729E0 /* ProfileIsCreatedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIsCreatedViewModel.swift; sourceTree = "<group>"; };
+		100E11D92BA9C047007729E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1049DE282B9DA05B0004C4E7 /* ChooseAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAvatarView.swift; sourceTree = "<group>"; };
 		1049DE2D2B9DC1130004C4E7 /* EnterUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUsernameView.swift; sourceTree = "<group>"; };
 		1049DE2F2B9DDA1D0004C4E7 /* AvatarImageComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageComponentView.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				100E11942BA2F934007729E0 /* Utilities */,
 				1071FACA2B8F7DEE002E9098 /* Resources */,
 				106EE7DC2B8F7B7700568DAE /* Info.plist */,
-				100E11922BA1B484007729E0 /* GoogleService-Info.plist */,
+				100E11D92BA9C047007729E0 /* GoogleService-Info.plist */,
 				106EE7D42B8F776A00568DAE /* Preview Content */,
 			);
 			path = Marvellous;
@@ -429,7 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				106EE7DE2B8F7C5B00568DAE /* LaunchScreen.storyboard in Resources */,
-				100E11932BA1B484007729E0 /* GoogleService-Info.plist in Resources */,
+				100E11DA2BA9C047007729E0 /* GoogleService-Info.plist in Resources */,
 				106EE7D62B8F776A00568DAE /* Preview Assets.xcassets in Resources */,
 				106EE7D32B8F776A00568DAE /* Assets.xcassets in Resources */,
 			);
